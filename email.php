@@ -16,14 +16,14 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;//
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Port = 587;
     $mail->Username = 'oliver22official@gmail.com';
     $mail->Password = 'ilew ktix flnp bjeh';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;//
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //
 
 
     //Recipients
@@ -36,7 +36,7 @@ try {
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 */
-    
+
     //Content
     $mail->isHTML(false);
     $mail->Subject = 'Here is the subject';

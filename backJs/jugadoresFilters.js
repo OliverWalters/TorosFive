@@ -1,11 +1,11 @@
-$(document).ready(function() {
-            filterData();
-            /*$('#form').submit(function(e) {
-                e.preventDefault();
-                filterData();
-            });*/
-        });
-function filterData(num){
+$(document).ready(function () {
+    filterData();
+    /*$('#form').submit(function(e) {
+        e.preventDefault();
+        filterData();
+    });*/
+});
+function filterData(num) {
     var nombre = $('#nombre').val();
     var equipo = $('#equipo').val();
     var posicion = $('#posicion').val();
@@ -18,16 +18,15 @@ function filterData(num){
             equipo: equipo,
             posicion: posicion
         },
-        success: function(response)
-        {
+        success: function (response) {
             $('#table tbody').html(response);
         }
-   });
+    });
 }
-            
-function reset(){
+
+function reset() {
     var currentUrl = window.location.href;
-    if(currentUrl.includes("?team=")){
+    if (currentUrl.includes("?team=")) {
         window.location.href = "jugadores.php"
     }
     document.getElementById("form").reset();

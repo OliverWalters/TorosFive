@@ -75,9 +75,11 @@
 .menu:hover .menu__dropdown {
     display: block;
 }
-.menu:hover{
+
+.menu:hover {
     padding-left: 60px;
 }
+
 .menu__dropdown li {
     background-color: #454545;
     padding: 13px 25px;

@@ -3,42 +3,41 @@ include '../compruebaSesion.php';
 require_once "../bootstrap.php";
 require_once '../src/Entity/Equipo.php';
 require_once '../src/Entity/Entrenador.php';
-$nombre ="";
-$categoria="";
-$entrenador="";
-$output="";
-  
-  if (isset($_POST['nombre']) && !empty($_POST['nombre'])){
+$nombre = "";
+$categoria = "";
+$entrenador = "";
+$output = "";
+
+if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     $nombre = $_POST['nombre'];
-  }
+}
 
-  if (isset($_POST['categoria']) && !empty($_POST['categoria'])){
+if (isset($_POST['categoria']) && !empty($_POST['categoria'])) {
     $categoria = $_POST['categoria'];
-  }
+}
 
-  if (isset($_POST['entrenador']) && !empty($_POST['entrenador'])){
-      $entrenador = $_POST['entrenador'];
-  }
+if (isset($_POST['entrenador']) && !empty($_POST['entrenador'])) {
+    $entrenador = $_POST['entrenador'];
+}
 
-    $query = $entityManager->createQuery(
-        'SELECT e FROM Equipo e 
+$query = $entityManager->createQuery(
+    'SELECT e FROM Equipo e 
         JOIN e.dnientrenador entrenador
         WHERE e.nombre LIKE :nombre 
         AND e.categoria LIKE :categoria 
         AND entrenador.dnientrenador LIKE :entrenador'
-    )->setParameters([
-        'nombre' => '%'. $nombre . '%',
-        'categoria' => '%'.$categoria . '%',
-        'entrenador' => '%'.$entrenador . '%'
-    ]);
+)->setParameters([
+    'nombre' => '%' . $nombre . '%',
+    'categoria' => '%' . $categoria . '%',
+    'entrenador' => '%' . $entrenador . '%'
+]);
 
 
 $equipos = $query->getResult();
 
 
-if($equipos != null){
-    foreach($equipos as $equipo)
-    {
+if ($equipos != null) {
+    foreach ($equipos as $equipo) {
         $entrenador = $entityManager->getRepository('Entrenador')->find($equipo->getDnientrenador());
         $output .=  "<tr>"
             . "<td>{$equipo->getNombre()}</td>"
@@ -50,11 +49,7 @@ if($equipos != null){
             . "<td><a href='jugadores.php?team={$equipo->getIdequipo()}'>Acceder</a></td>"
             . "</tr>";
     }
-}
-else
-{
+} else {
     $output = '<h3>No Data Found</h3>';
 }
 echo $output;
-
-

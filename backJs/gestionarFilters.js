@@ -1,7 +1,7 @@
-function listarJugadores(num){
+function listarJugadores(num) {
     var nombre = $('#nombreJug').val();
     var excepto = num;
-    
+
     $.ajax({
         type: "POST",
         url: `../backAjax/gestionSubmit.php?team=${num}`,
@@ -9,17 +9,16 @@ function listarJugadores(num){
             nombre: nombre,
             excepto: excepto
         },
-        success: function(response)
-        {
+        success: function (response) {
             $('#tblJug tbody').html(response);
         }
-   });
+    });
 }
 
-function listarEquipo(num){
-    var nombre =  $('#nombreJugEq').val();
+function listarEquipo(num) {
+    var nombre = $('#nombreJugEq').val();
     var equipo = num;
-    
+
     $.ajax({
         type: "POST",
         url: `../backAjax/gestionSubmit.php?team=${num}`,
@@ -27,10 +26,9 @@ function listarEquipo(num){
             nombre: nombre,
             equipo: equipo
         },
-        success: function(response)
-        {
+        success: function (response) {
             $('#tblJugEq tbody').html(response);
         }
-   });
+    });
 }
 
