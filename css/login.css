@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/background/pista.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -1400px;
+    background-attachment: fixed;
+    background-color: rgb(210, 239, 255);
+}
+
+@media (max-width: 1200px) {
+    body {
+        background-position-y: -850px;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        background-position-y: 50%;
+    }
+    .form {
+        box-shadow: 0px 0px 20px 0px rgb(65, 65, 65) !important;
+        transition: ease-in-out 0.3s;
+    }
+}
+
+.form {
+    position: absolute;
+    top: 20%;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px 50px;
+    box-shadow: 0px 0px 20px 0px rgb(240, 240, 240);
+    transition: ease-in-out 0.3s;
+}
+
+.form__label {
+    font-size: x-large;
+
+}
+
+.form__input {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    border: solid 1px black;
+}
+
+.form__input--submit {
+    border-radius: 10px;
+    background-color: rgb(207, 207, 207);
+    border: solid 1.5px rgb(0, 0, 0);
+    font-weight: bold;
+    transition: ease-in-out 0.2s;
+}
+
+.form__input--submit:hover {
+    border-radius: 10px;
+    background-color: rgb(0, 233, 0);
+    border: solid 1.5px rgb(58, 174, 32);
+    font-weight: bold;
+    transition: ease-in-out 0.2s;
+}
+
+.alert {
+    position: absolute;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid red;
+    padding: 20px;
+    top: 65%;
+    box-shadow: 0px 0px 20px 0px rgb(171, 171, 171);
+
+}
+/* 
+    Created on : 15 mar 2024, 18:44:46
+    Author     : Oliver
+*/
+
