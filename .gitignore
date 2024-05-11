@@ -50,3 +50,31 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+###########################################################
+
+# Symfony
+/var/
+/web/bundles/
+/app/config/parameters.yml
+
+# Composer
+/vendor/
+
+# IDE
+/.idea/
+/.vscode/
+
+# Logs y caches
+/app/cache/
+/app/logs/
+/var/cache/
+/var/logs/
+/var/
+/web/bundles/
+/app/config/parameters.yml
+/app/cache/
+/app/logs/
+/vendor/
+/nbproject/
+/build/
