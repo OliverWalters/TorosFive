@@ -2,7 +2,7 @@
 // bootstrap.php
 // Include Composer Autoload (relative to project root).
 include 'config.php';
-require_once ROOT_PATH."/vendor/autoload.php";
+require_once ROOT."/vendor/autoload.php";
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 $paths = array("./src");

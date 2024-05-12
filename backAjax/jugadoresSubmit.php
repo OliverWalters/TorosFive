@@ -1,10 +1,13 @@
 <?php
-include '../compruebaSesion.php';
-require_once "../bootstrap.php";
-require_once '../src/Entity/Equipo.php';
-require_once '../src/Entity/Jugador.php';
-require_once '../src/Entity/Equipojugador.php';
-require_once '../src/Entity/Entrenador.php';
+if(!defined("ROOT")){
+    include '../config.php';
+}
+include ROOT.'/compruebaSesion.php';
+require_once ROOT."/bootstrap.php";
+require_once ROOT.'/src/Entity/Equipo.php';
+require_once ROOT.'/src/Entity/Jugador.php';
+require_once ROOT.'/src/Entity/Entrenador.php';
+require_once ROOT.'/src/Entity/Equipojugador.php';
 $nombre = "";
 $equipo = "";
 $posicion = "";

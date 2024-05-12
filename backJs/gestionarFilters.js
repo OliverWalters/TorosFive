@@ -4,7 +4,7 @@ function listarJugadores(num) {
 
     $.ajax({
         type: "POST",
-        url: `../backAjax/gestionSubmit.php?team=${num}`,
+        url: `../../backAjax/gestionSubmit.php?team=${num}`,
         data: {
             nombre: nombre,
             excepto: excepto
@@ -21,7 +21,7 @@ function listarEquipo(num) {
 
     $.ajax({
         type: "POST",
-        url: `../backAjax/gestionSubmit.php?team=${num}`,
+        url: `../../backAjax/gestionSubmit.php?team=${num}`,
         data: {
             nombre: nombre,
             equipo: equipo

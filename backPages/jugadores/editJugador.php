@@ -1,9 +1,13 @@
 <?php
-include '../compruebaSesion.php';
-require_once "../bootstrap.php";
-require_once '../src/Entity/Jugador.php';
-require_once '../src/Entity/Equipo.php';
-require_once '../src/Entity/Equipojugador.php';
+if(!defined("ROOT")){
+    include '../../config.php';
+}
+include ROOT.'/compruebaSesion.php';
+require_once ROOT."/bootstrap.php";
+require_once ROOT.'/src/Entity/Equipo.php';
+require_once ROOT.'/src/Entity/Jugador.php';
+require_once ROOT.'/src/Entity/Entrenador.php';
+require_once ROOT.'/src/Entity/Equipojugador.php';
 $result;
 $img = "";
 
@@ -61,11 +65,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <meta charset="UTF-8">
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/app.css">
+        <link rel="stylesheet" href="../../css/app.css">
     </head>
     <body class="body--margin">
         <?php
-            include 'gestionHeader.html';
+            include '../gestionHeader.php';
             if(isset($_GET["err"])){
                 if($_GET["err"] == "1"){
                     print "<div class='error'><h3>ERROR AL AGREGAR UN EQUIPO</h3><p>Inténtelo de nuevo</p></div>";

@@ -10,15 +10,17 @@
 
 <body class="body--margin">
     <?php
-    require_once "../bootstrap.php";
-    include '../compruebaSesion.php';
-    include "./gestionHeader.html";
-    require_once '../src/Entity/Entrenador.php';
+    if(!defined("ROOT")){
+        include '../config.php';
+    }
+    include ROOT.'/compruebaSesion.php';
+    require_once ROOT."/bootstrap.php";
+    include "./gestionHeader.php";
     ?>
     <h1>Lista de gestiones</h1>
     <ul>
-        <li><a href="equipos.php">Gestión de Equipos</a></li>
-        <li><a href="jugadores.php">Gestión de Jugadores</a></li>
+        <li><a href="equipos/equipos.php">Gestión de Equipos</a></li>
+        <li><a href="jugadores/jugadores.php">Gestión de Jugadores</a></li>
         <li><a href="">Gestión de Eventos</a></li>
         <li><a href="">Gestión de Noticias</a></li>
     </ul>

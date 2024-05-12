@@ -1,10 +1,13 @@
 <?php
-include '../compruebaSesion.php';
-require_once "../bootstrap.php";
-require_once '../src/Entity/Equipo.php';
-require_once '../src/Entity/Entrenador.php';
-require_once '../src/Entity/Jugador.php';
-require_once '../src/Entity/Equipojugador.php';
+if(!defined("ROOT")){
+    include '../../config.php';
+}
+include ROOT.'/compruebaSesion.php';
+require_once ROOT."/bootstrap.php";
+require_once ROOT.'/src/Entity/Equipo.php';
+require_once ROOT.'/src/Entity/Jugador.php';
+require_once ROOT.'/src/Entity/Entrenador.php';
+require_once ROOT.'/src/Entity/Equipojugador.php';
 if (isset($_GET["err"])) {
     if ($_GET["err"] == "1") {
         print "<div class='error'><h3>HA HABIDO UN ERROR AL BORRAR</h3><p>Inténtelo de nuevo</p><br><br></div>";
@@ -53,17 +56,17 @@ try {
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="../backJs/gestionarFilters.js"></script>
+    <script src="<?php echo ROOT_PATH;?>/backJs/gestionarFilters.js"></script>
 </head>
 
 <body class="body--margin">
     <?php
-    include 'gestionHeader.html';
+    include '../gestionHeader.php';
     ?>
     <div>
-        <input type="text" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="off">
+        <input type="text" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post"><input type="submit" value="Eliminar">
             <div class="contenedor">
                 <table id="tblJugEq">

@@ -1,22 +1,28 @@
+<?php
+    if(!defined("ROOT")){
+        include '../../config.php';
+    }
+    include ROOT.'/compruebaSesion.php';
+    require_once ROOT."/bootstrap.php";
+    require_once ROOT.'/src/Entity/Equipo.php';
+    require_once ROOT.'/src/Entity/Jugador.php';
+    require_once ROOT.'/src/Entity/Entrenador.php';
+    require_once ROOT.'/src/Entity/Equipojugador.php';
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="../backJs/equiposFilters.js"></script>
+    <script src="<?php echo ROOT_PATH;?>/backJs/equiposFilters.js"></script>
 </head>
 
 <body class="body--margin">
     <?php
-    include '../compruebaSesion.php';
-    include 'gestionHeader.html';
-    require_once "../bootstrap.php";
-    require_once '../src/Entity/Equipo.php';
-    require_once '../src/Entity/Entrenador.php';
+    include '../gestionHeader.php';
     $equipos = $entityManager->getRepository('Equipo')->findAll();
     if (isset($_GET["err"])) {
         if ($_GET["err"] == "1") {

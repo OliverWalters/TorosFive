@@ -1,8 +1,11 @@
 <?php
-include '../compruebaSesion.php';
-require_once "../bootstrap.php";
-require_once '../src/Entity/Equipo.php';
-require_once '../src/Entity/Entrenador.php';
+if(!defined("ROOT")){
+        include '../../config.php';
+    }
+    include ROOT.'/compruebaSesion.php';
+    require_once ROOT."/bootstrap.php";
+    require_once ROOT.'/src/Entity/Equipo.php';
+    require_once ROOT.'/src/Entity/Entrenador.php';
 
 $equipos = $entityManager->getRepository('Equipo')->findAll();
 $result;
@@ -35,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
 </head>
 
 <body class="body--margin">

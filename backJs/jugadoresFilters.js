@@ -12,7 +12,7 @@ function filterData(num) {
 
     $.ajax({
         type: "POST",
-        url: "../backAjax/jugadoresSubmit.php",
+        url: "../../backAjax/jugadoresSubmit.php",
         data: {
             nombre: nombre,
             equipo: equipo,

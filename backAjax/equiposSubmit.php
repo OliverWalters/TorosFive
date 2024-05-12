@@ -1,8 +1,11 @@
 <?php
-include '../compruebaSesion.php';
-require_once "../bootstrap.php";
-require_once '../src/Entity/Equipo.php';
-require_once '../src/Entity/Entrenador.php';
+if(!defined("ROOT")){
+    include '../config.php';
+}
+include ROOT.'/compruebaSesion.php';
+require_once ROOT."/bootstrap.php";
+require_once ROOT.'/src/Entity/Equipo.php';
+require_once ROOT.'/src/Entity/Entrenador.php';
 $nombre = "";
 $categoria = "";
 $entrenador = "";
@@ -46,7 +49,7 @@ if ($equipos != null) {
             . "<td><a href='gestionarEquipo.php?team={$equipo->getIdequipo()}'>Gestionar</a></td>"
             //. "<td><button>Delete</button></td>"
             . "<td><a href='borrarEquipo.php?team={$equipo->getIdequipo()}'>Delete</a></td>"
-            . "<td><a href='jugadores.php?team={$equipo->getIdequipo()}'>Acceder</a></td>"
+            . "<td><a href='".ROOT_PATH."/backPages/jugadores/jugadores.php?team={$equipo->getIdequipo()}'>Acceder</a></td>"
             . "</tr>";
     }
 } else {

@@ -9,10 +9,10 @@ function filterData() {
     var nombre = $('#nombre').val();
     var categoria = $('#categoria').val();
     var entrenador = $('#entrenador').val();
-
+    console.log("hola")
     $.ajax({
         type: "POST",
-        url: "../backAjax/equiposSubmit.php",
+        url: "../../backAjax/equiposSubmit.php",
         data: {
             nombre: nombre,
             categoria: categoria,
