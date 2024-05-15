@@ -9,7 +9,6 @@ function filterData() {
     var nombre = $('#nombre').val();
     var categoria = $('#categoria').val();
     var entrenador = $('#entrenador').val();
-    console.log("hola")
     $.ajax({
         type: "POST",
         url: "../../backAjax/equiposSubmit.php",
@@ -19,7 +18,7 @@ function filterData() {
             entrenador: entrenador
         },
         success: function (response) {
-            $('#table tbody').html(response);
+            $('#table').html(response);
         }
     });
 }

@@ -57,6 +57,9 @@ try {
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablaEquiposjugadores.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/tabla.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/equiposjugadores.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="<?php echo ROOT_PATH;?>/backJs/gestionarFilters.js"></script>
 </head>
@@ -65,39 +68,35 @@ try {
     <?php
     include '../gestionHeader.php';
     ?>
-    <div>
-        <input type="text" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post"><input type="submit" value="Eliminar">
-            <div class="contenedor">
-                <table id="tblJugEq">
-                    <thead>
-                        <tr>
-                            <th>Seleccionado</th>
-                            <th>Jugadora</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+    <div class="box">
+        <div class="box__item">
+            <div class="tbl">
+                <h2 class="tbl__title">Equipo<small class="tbl__subtitle"></small></h2>
+                <input type="text" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post"><input type="submit" value="Eliminar">
+                    <li class="tbl__header">
+                        <div class="tbl__col tbl__col--1">Elegir</div>
+                        <div class="tbl__col tbl__col--2">Jugadora</div>
+                    </li>
+                    <ul class="tbl__list" id="tblJugEq">
+                    </ul>
+                </form>
             </div>
-        </form>
-    </div>
-    <div>
-        <input type="text" onkeyup="listarJugadores(<?php echo $team; ?>)" id="nombreJug" autocomplete="new-password">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=1" method="post"><input type="submit" value="Añadir">
-            <div class="contenedor">
-                <table id="tblJug">
-                    <thead>
-                        <tr>
-                            <th>Seleccionado</th>
-                            <th>Jugadora</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+        </div>
+        <div class="box__item">
+            <div class="tbl">
+                <h2 class="tbl__title">Jugadoras<small class="tbl__subtitle"></small></h2>
+                <input type="text" onkeyup="listarJugadores(<?php echo $team; ?>)" id="nombreJug" autocomplete="new-password">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=1" method="post"><input type="submit" value="Añadir">
+                    <li class="tbl__header">
+                        <div class="tbl__col tbl__col--1">Elegir</div>
+                        <div class="tbl__col tbl__col--2">Jugadora</div>
+                    </li>
+                    <ul class="tbl__list" id="tblJug">
+                    </ul>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
     <script>
         listarEquipo(<?php echo $team; ?>)

@@ -1,0 +1,20 @@
+.tbl {
+    .tbl__col--1 {
+        flex-basis: 15%;
+    }
+
+    .tbl__col--2{
+        flex-basis: 50%;
+    }
+    .tbl__col--3, .tbl__col--4 {
+        flex-basis: 12%;
+        text-align: center;
+    }
+
+    
+}
+@media (max-width: 900px) {
+        .tbl__col--1, .tbl__col--2, .tbl__col--3, .tbl__col--4 {
+            flex-basis: 20%;
+        }
+    }

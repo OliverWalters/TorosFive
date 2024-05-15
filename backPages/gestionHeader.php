@@ -8,7 +8,7 @@ if(!defined("ROOT")){
 <header class="header">
     <div class="header__container">
         <div class="logo">
-            <img src="<?php echo ROOT_PATH.'/images/Logo.png';?>" alt="Logo" class="logo__image">
+            <a href="<?php echo ROOT_PATH.'/backPages/listaGestion.php';?>"><img src="<?php echo ROOT_PATH.'/images/Logo.png';?>" alt="Logo" class="logo__image"></a>
         </div>
         <div class="controls">
             <div class="menu">

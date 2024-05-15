@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body class="body--margin">
     <?php
-    include 'gestionHeader.html';
+    include '../gestionHeader.php';
     if (isset($_GET["err"])) {
         if ($_GET["err"] == "1") {
             print "<div class='error'><h3>ERROR AL AGREGAR UN EQUIPO</h3><p>Inténtelo de nuevo</p></div>";

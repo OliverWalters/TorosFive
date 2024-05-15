@@ -1,0 +1,23 @@
+.box{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin:auto;
+    gap:40px;
+}
+
+.box__item{
+    padding:20px 10px;
+    background-color: lightgray;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 black;
+}
+.tbl__list{
+    overflow-y: auto;
+    max-height: 400px;
+}
+/* 
+    Created on : 15 may 2024, 19:08:06
+    Author     : Oliver
+*/
+

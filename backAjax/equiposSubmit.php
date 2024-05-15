@@ -37,22 +37,30 @@ $query = $entityManager->createQuery(
 
 
 $equipos = $query->getResult();
-
+$output .= '<li class="tbl__header">
+            <div class="tbl__col tbl__col--1">Nombre</div>
+            <div class="tbl__col tbl__col--2">Categoria</div>
+            <div class="tbl__col tbl__col--3">Entrenador</div>
+            <div class="tbl__col tbl__col--4">Gestionar</div>
+            <div class="tbl__col tbl__col--5">Eliminar</div>
+            <div class="tbl__col tbl__col--6">Acceder</div>
+        </li>';
 
 if ($equipos != null) {
     foreach ($equipos as $equipo) {
         $entrenador = $entityManager->getRepository('Entrenador')->find($equipo->getDnientrenador());
-        $output .=  "<tr>"
-            . "<td>{$equipo->getNombre()}</td>"
-            . "<td>{$equipo->getCategoria()}</td>"
-            . "<td>{$entrenador->getNombre()}</td>"
-            . "<td><a href='gestionarEquipo.php?team={$equipo->getIdequipo()}'>Gestionar</a></td>"
-            //. "<td><button>Delete</button></td>"
-            . "<td><a href='borrarEquipo.php?team={$equipo->getIdequipo()}'>Delete</a></td>"
-            . "<td><a href='".ROOT_PATH."/backPages/jugadores/jugadores.php?team={$equipo->getIdequipo()}'>Acceder</a></td>"
-            . "</tr>";
+        $output .= 
+        '<li class="tbl__row">
+            <div class="tbl__col tbl__col--1" data-label="Nombre">' . $equipo->getNombre() . '</div>
+            <div class="tbl__col tbl__col--2" data-label="Categoria">' . $equipo->getCategoria() . '</div>
+            <div class="tbl__col tbl__col--3" data-label="Entrenador">' . $entrenador->getNombre() . '</div>
+            <div class="tbl__col tbl__col--4" data-label="Gestionar"><a href=\'gestionarEquipo.php?team=' . $equipo->getIdequipo() . '\'><i class="fa-solid fa-pen-to-square" style="color: #ffde2e;font-size: 20px"></i></a></div>
+            <div class="tbl__col tbl__col--5" data-label="Eliminar"><a href=\'borrarEquipo.php?team=' . $equipo->getIdequipo() . '\'><i class="fa-solid fa-trash" style="color: red"></i></a></div>
+            <div class="tbl__col tbl__col--6" data-label="Acceder"><a href="' . ROOT_PATH . '/backPages/jugadores/jugadores.php?team=' . $equipo->getIdequipo() . '"><i class="fa-solid fa-chevron-right"></i></a></div>
+        </li>';
+
     }
 } else {
-    $output = '<h3>No Data Found</h3>';
+    $output .= '<h3>No Data Found</h3>';
 }
 echo $output;

@@ -19,7 +19,7 @@ function filterData(num) {
             posicion: posicion
         },
         success: function (response) {
-            $('#table tbody').html(response);
+            $('#table').html(response);
         }
     });
 }

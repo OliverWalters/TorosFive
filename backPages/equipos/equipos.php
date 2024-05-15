@@ -16,6 +16,8 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablaEquipos.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/tabla.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="<?php echo ROOT_PATH;?>/backJs/equiposFilters.js"></script>
 </head>
@@ -61,19 +63,11 @@
     </form>
     <button id="reset" onclick="reset()">Reset</button>
     <button onclick="window.location.href='agregarEquipo.php';">Añadir equipo</button>
-    <table id="table">
-        <thead>
-            <tr>
-                <td>Nombre</td>
-                <td>Categoria</td>
-                <td>Entrenador</td>
-                <td>Gestionar</td>
-                <td>Eliminar</td>
-                <td>Acceder</td>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="tbl">
+    <h2 class="tbl__title">Gestión de equipos <small class="tbl__subtitle"></small></h2>
+    <ul class="tbl__list" id="table">
+    </ul>
+</div>
 </body>
 
 </html>

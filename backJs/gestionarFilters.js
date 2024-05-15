@@ -10,7 +10,7 @@ function listarJugadores(num) {
             excepto: excepto
         },
         success: function (response) {
-            $('#tblJug tbody').html(response);
+            $('#tblJug').html(response);
         }
     });
 }
@@ -27,7 +27,7 @@ function listarEquipo(num) {
             equipo: equipo
         },
         success: function (response) {
-            $('#tblJugEq tbody').html(response);
+            $('#tblJugEq').html(response);
         }
     });
 }

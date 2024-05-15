@@ -21,6 +21,8 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
+        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablaJugadores.css">
+        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/tabla.css">
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script src="<?php echo ROOT_PATH;?>/backJs/jugadoresFilters.js"></script>
     </head>
@@ -78,15 +80,10 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
 </form>
 <button id="reset" onclick="reset()">Reset</button>
 <button onclick="window.location.href='agregarJugador.php';">Añadir jugador</button>
-<table id="table">
-    <thead>
-        <tr><td>Nombre</td>
-            <td>Posicion</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<div class="tbl">
+    <h2 class="tbl__title">Gestión de jugadores<small class="tbl__subtitle"></small></h2>
+    <ul class="tbl__list" id="table">
+    </ul>
+</div>
 </body>
 </html>

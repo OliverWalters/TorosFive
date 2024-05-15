@@ -52,19 +52,24 @@ if ($equipo == "") {
 
 
 $jugadores = $query->getResult();
-
+$output .= '<li class="tbl__header">
+            <div class="tbl__col tbl__col--1">Nombre</div>
+            <div class="tbl__col tbl__col--2">Posición</div>
+            <div class="tbl__col tbl__col--3">Editar</div>
+            <div class="tbl__col tbl__col--4">Eliminar</div>
+        </li>';
 
 if ($jugadores != null) {
   foreach ($jugadores as $jugador) {
-    $output .=  "<tr>"
-      . "<td>{$jugador->getNombre()}</td>"
-      . "<td>{$jugador->getPosicion()}</td>"
-      . "<td><a href='editJugador.php?jug={$jugador->getDnijugador()}'>Editar</a></td>"
-      //. "<td><button>Delete</button></td>"
-      . "<td><a href='borrarJugador.php?jug={$jugador->getDnijugador()}'>Delete</a></td>"
-      . "</tr>";
+      $output .= 
+        '<li class="tbl__row">
+            <div class="tbl__col tbl__col--1" data-label="Nombre">' . $jugador->getNombre() . '</div>
+            <div class="tbl__col tbl__col--2" data-label="Posición">' . $jugador->getPosicion() . '</div>
+            <div class="tbl__col tbl__col--3" data-label="Editar"><a href=\'editJugador.php?jug=' . $jugador->getDnijugador() . '\'><i class="fa-solid fa-pen-to-square" style="color: #ffde2e;font-size: 20px"></i></a></div>
+            <div class="tbl__col tbl__col--4" data-label="Eliminar"><a href=\'borrarJugador.php?jug=' . $jugador->getDnijugador() . '\'><i class="fa-solid fa-trash" style="color: red"></i></a></div>
+        </li>';
   }
 } else {
-  $output = '<h3>No Data Found</h3>';
+  $output .= '<h3>No Data Found</h3>';
 }
 echo $output;

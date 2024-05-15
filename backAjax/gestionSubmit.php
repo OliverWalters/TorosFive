@@ -55,16 +55,28 @@ if ($equipo == "") {
 
 
 $jugadores = $query->getResult();
-
+/*$output .= '<li class="tbl__header">
+                <div class="tbl__col tbl__col--1">Elegir</div>
+                <div class="tbl__col tbl__col--2">Jugadora</div>
+            </li>';*/
 
 if ($jugadores != null) {
   foreach ($jugadores as $jugador) {
-    $output .=  "<tr>"
-      . "<td><input type='checkbox' name='opciones[]' value='{$jugador->getDnijugador()}:{$_GET["team"]}'></td>"
-      . "<td>{$jugador->getNombre()}</td>"
-      . "</tr>";
+      $output .= 
+        '<li class="tbl__row">
+            <div class="tbl__col tbl__col--1" data-label="Seleccionado">
+                <div class="checkbox-wrapper-59">
+                    <label class="switch">
+                        <input type="checkbox" name="opciones[]" value="'.$jugador->getDnijugador().':'.$_GET["team"].'">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="tbl__col tbl__col--2" data-label="Jugadora">' . $jugador->getNombre() . '</div>
+        </li>';
+      
   }
 } else {
-  $output = '<h3>No Data Found</h3>';
+  $output .= '<h3>No Data Found</h3>';
 }
 echo $output;
