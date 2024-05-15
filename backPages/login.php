@@ -36,13 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-        <label class="form__label">Usuario:</label> <br>
-        <input class="form__input" required type='text' name='usuario'> <br>
-        <label class="form__label">Clave:</label> <br>
-        <input class="form__input" required type='password' name='clave'> <br>
-        <input class="form__input form__input--submit" class="submit" type='submit' value="Iniciar Sesión">
-    </form>
+    <div class="background"></div>
+        <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+            <div class="form__img"><i class="fa-solid fa-user-secret"></i></div>
+            <div class="form__part">
+                <label class="form__label"><i class="fa-solid fa-user" ></i></label>
+                <input class="form__input" required type='text' name='usuario' placeholder="Usuario"> 
+            </div>
+            <div class="form__part">
+                <label class="form__label"><i class="fa-solid fa-lock"></i></label>
+                <input class="form__input" required type='password' name='clave' placeholder="Contraseña"> <br>
+            </div>
+            <input class="form__input form__input--submit" class="submit" type='submit' value="Iniciar Sesión">
+        </form>
+    
     <!-- OJO de PASSWORD -->
 </body>
 
