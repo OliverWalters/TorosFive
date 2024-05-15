@@ -17,13 +17,15 @@
     require_once ROOT."/bootstrap.php";
     include "./gestionHeader.php";
     ?>
-    <h1>Lista de gestiones</h1>
-    <ul>
-        <li><a href="equipos/equipos.php">Gestión de Equipos</a></li>
-        <li><a href="jugadores/jugadores.php">Gestión de Jugadores</a></li>
-        <li><a href="">Gestión de Eventos</a></li>
-        <li><a href="">Gestión de Noticias</a></li>
-    </ul>
+    <div>
+        <h1>Lista de gestiones</h1>
+        <ul>
+            <li><a href="equipos/equipos.php">Gestión de Equipos</a></li>
+            <li><a href="jugadores/jugadores.php">Gestión de Jugadores</a></li>
+            <li><a href="">Gestión de Eventos</a></li>
+            <li><a href="">Gestión de Noticias</a></li>
+        </ul>
+    </div>
 </body>
 
 </html>

@@ -16,8 +16,8 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablaEquipos.css">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/tabla.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablas/tablaEquipos.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tabla.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="<?php echo ROOT_PATH;?>/backJs/equiposFilters.js"></script>
 </head>

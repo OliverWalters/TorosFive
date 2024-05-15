@@ -6,7 +6,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-image: url(../images/background/pista.jpg);
+    background-image: url(../../images/background/pista.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -1400px;
@@ -68,6 +68,7 @@
     min-width: 150px;
     transition: ease-in-out 0.2s;
 }
+
 .form__input:focus {
     background-color: rgb(235, 235, 235);
     transition: ease-in-out 0.2s;

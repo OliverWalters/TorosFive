@@ -3,26 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/TorosFive/config.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/listaGestion.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/equipos/gestionarEquipo.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backJs/gestionarFilters.js</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backJs/jugadoresFilters.js</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/css/gestionHeader.css</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/equipos/borrarEquipo.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backJs/equiposFilters.js</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/jugadores/editJugador.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/bootstrap.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/jugadores/agregarJugador.php</file>
             <file>file:/C:/xampp/htdocs/TorosFive/backPages/jugadores/jugadores.php</file>
             <file>file:/C:/xampp/htdocs/TorosFive/backPages/equipos/equipos.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/equipos/editEquipo.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/compruebaSesion.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backAjax/equiposSubmit.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backPages/equipos/agregarEquipo.php</file>
+            <file>file:/C:/xampp/htdocs/TorosFive/backPages/equipos/gestionarEquipo.php</file>
+            <file>file:/C:/xampp/htdocs/TorosFive/backPages/listaGestion.php</file>
+            <file>file:/C:/xampp/htdocs/TorosFive/css/backCss/login.css</file>
             <file>file:/C:/xampp/htdocs/TorosFive/backPages/gestionHeader.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backAjax/jugadoresSubmit.php</file>
-            <file>file:/C:/xampp/htdocs/TorosFive/backAjax/gestionSubmit.php</file>
+            <file>file:/C:/xampp/htdocs/TorosFive/backPages/login.php</file>
         </group>
     </open-files>
 </project-private>
