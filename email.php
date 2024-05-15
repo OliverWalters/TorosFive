@@ -23,7 +23,7 @@ try {
     $mail->Port = 587;
     $mail->Username = 'oliver22official@gmail.com';
     $mail->Password = 'ilew ktix flnp bjeh';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //
+    $mail->SMTPSecure = 'tls';
 
 
     //Recipients
