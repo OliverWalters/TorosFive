@@ -25,11 +25,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $nombre_archivo = $_FILES['img']['name'];
 
                 // Directorio donde se guardará la imagen (ajusta la ruta según tus necesidades)
-                $directorio_destino = '/images/jugadores/';
+                $directorio_destino = ROOT.'/images/jugadores/';
 
                 // Mover el archivo cargado al directorio de destino
                 $ruta_destino = $directorio_destino . $nombre_archivo;
-                if (move_uploaded_file($nombre_temporal, "..".$ruta_destino)) {
+                if (move_uploaded_file($nombre_temporal, $ruta_destino)) {
                     $img = $ruta_destino;
                 } else {
                     throw new Exception;//controlar error
@@ -66,6 +66,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../css/app.css">
+        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/checkbox.css">
+        <script src="<?php echo ROOT_PATH;?>/backJs/enableImg.js"></script>
     </head>
     <body class="body--margin">
         <?php
@@ -87,7 +89,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             Nacimiento:
             <input required autocomplete="off" type="date" name="nac" id="nac" value="<?php echo $result->getNacimiento()->format('Y-m-d');?>"><br><br>
             Cambiar imagen:
-            <input name="imgChange" id="imgChange" type="checkbox"><br><br>
+            <div class="checkbox-wrapper-59">
+                <label class="switch" >
+                    <input type="checkbox" name="imgChange" id="imgChange">
+                    <span class="slider"></span>
+                </label>
+            </div><br><br>
             Imagen:<!-- TODO if checked disable -->
             <input autocomplete="off" type="file" name="img" id="img" accept="image/*" value="<?php echo "..".$result->getImagen();?>"><br><br>
             

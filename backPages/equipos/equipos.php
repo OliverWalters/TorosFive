@@ -33,13 +33,19 @@
     }
     ?>
 
-    <form id="form">
-        Nombre:
-        <input autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()"><br><br>
-        Categoria:
-        <select type="text" name="categoria" id="categoria" onchange="filterData()">
-            <option value=""></option>
-            <?php
+    
+    <div class="tbl">
+    <h2 class="tbl__title">Gestión de equipos <small class="tbl__subtitle"></small></h2>
+    <form id="form" class="tbl__form">
+      <div class="tbl__form__group">
+        <label for="nombre">Nombre:</label>
+        <input autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()">
+      </div>
+      <div class="tbl__form__group">
+        <label for="categoria">Categoria:</label>
+        <select name="categoria" id="categoria"  onchange="filterData()">
+          <option value=""></option>
+          <?php
             foreach ($equipos as $equipo) {
             ?>
                 <option value="<?php echo $equipo->getCategoria(); ?>"><?php echo $equipo->getCategoria(); ?></option>
@@ -47,11 +53,12 @@
             }
             ?>
         </select>
-        <br><br>
-        Entrenador:
+      </div>
+      <div class="tbl__form__group">
+        <label for="entrenador">Entrenador:</label>
         <select type="text" name="entrenador" id="entrenador" onchange="filterData()">
-            <option value=""></option>
-            <?php
+          <option value=""></option>
+          <?php
             foreach ($equipos as $equipo) {
                 $entrenador = $entityManager->getRepository('Entrenador')->find($equipo->getDnientrenador());
             ?>
@@ -59,12 +66,12 @@
             <?php
             }
             ?>
-        </select><br><br>
+        </select>
+      </div>
     </form>
-    <button id="reset" onclick="reset()">Reset</button>
-    <button onclick="window.location.href='agregarEquipo.php';">Añadir equipo</button>
-    <div class="tbl">
-    <h2 class="tbl__title">Gestión de equipos <small class="tbl__subtitle"></small></h2>
+    <button id="reset" onclick="reset()">Reset <i class="fa-solid fa-arrows-rotate"></i></button>
+    <button class="tbl__btn__add" onclick="window.location.href='agregarEquipo.php';">Añadir jugador <i class="fa-solid fa-user-plus"></i> </button>
+    
     <ul class="tbl__list" id="table">
     </ul>
 </div>

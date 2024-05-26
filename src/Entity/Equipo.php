@@ -34,6 +34,13 @@ class Equipo
      * @ORM\Column(name="categoria", type="string", length=50, nullable=true)
      */
     private $categoria;
+    
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="imagen", type="string", length=255, nullable=true)
+     */
+    private $imagen;
 
     /**
      * @var \Entrenador
@@ -56,6 +63,10 @@ class Equipo
     public function getCategoria(): ?string {
         return $this->categoria;
     }
+    
+    public function getImagen(): ?string {
+        return $this->imagen;
+    }
 
     public function getDnientrenador(): \Entrenador {
         return $this->dnientrenador;
@@ -67,6 +78,10 @@ class Equipo
 
     public function setCategoria(?string $categoria): void {
         $this->categoria = $categoria;
+    }
+    
+    public function setImagen(?string $imagen): void {
+        $this->imagen = $imagen;
     }
 
     public function setDnientrenador(\Entrenador $dnientrenador): void {

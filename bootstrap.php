@@ -3,6 +3,8 @@
 // Include Composer Autoload (relative to project root).
 include 'config.php';
 require_once ROOT."/vendor/autoload.php";
+//When using terminal use:
+//require_once __DIR__ . '/vendor/autoload.php';
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 $paths = array("./src");

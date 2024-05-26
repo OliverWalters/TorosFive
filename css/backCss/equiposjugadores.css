@@ -11,10 +11,7 @@
     background-color: lightgray;
     border-radius: 8px;
     box-shadow: 0 0 10px 0 black;
-}
-.tbl__list{
-    overflow-y: auto;
-    max-height: 400px;
+    min-height: 80vh;
 }
 /* 
     Created on : 15 may 2024, 19:08:06

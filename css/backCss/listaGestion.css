@@ -1,0 +1,56 @@
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
+.gestion__titulo {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    background-image: linear-gradient(20deg, #970fa1, #e0c0ff 70%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.gestion__lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gestion__elemento {
+    margin: 20px 0;
+    padding: 0 30px;
+    background-color: #fff;
+    width: 80%;
+    border-radius: 100px 0 0 100px;
+    box-shadow: 0 0 10px 1px gray;
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.gestion__enlace {
+    display: inline-block;
+    width: 100%;
+}
+
+.gestion__elemento:hover {
+    font-size: 23px;
+    transition: 0.2s ease-in-out;
+}
+
+.gestion__icono {
+    position: relative;
+    left: -30px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 100px;
+    color: white;
+}
+
+/* 
+    Created on : 21 may 2024, 21:59:22
+    Author     : Oliver
+*/
+
