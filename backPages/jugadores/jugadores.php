@@ -78,16 +78,7 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
       </div>
       <div class="tbl__form__group">
         <label for="posicion">Posición:</label>
-        <select name="posicion" id="posicion" onchange="filterData()">
-          <option value=""></option>
-          <?php
-            foreach($jugadoras as $jugador){
-                ?>
-                <option value="<?php echo $jugador->getPosicion(); ?>"><?php echo $jugador->getPosicion();?></option>
-                <?php
-            }
-        ?>
-        </select>
+        <input autocomplete="off" type="text" name="posicion" id="posicion" onkeyup="filterData()">
       </div>
     </form>
     <button id="reset" onclick="reset()">Reset <i class="fa-solid fa-arrows-rotate"></i></button>

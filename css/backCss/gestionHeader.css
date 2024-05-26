@@ -48,17 +48,28 @@
 }
 
 .user__button__image {
-    width: 30px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 5px;
+    display: block;
 }
 
 .user__button{
     flex-direction: column;
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin:0 20px;
 }
 
-.user__button__txt{
-    
+.user__button__txt {
+    position: absolute;
+    bottom: 0; 
+    color: white;
+    width: 100px;
 }
 
 .menu {
@@ -73,7 +84,7 @@
     bottom: -100%;
     right: 0;
     margin-top: -10px;
-    padding: 22px 0 0 0;
+    padding: 20px 0 0 0;
     background-color: #333;
     list-style-type: none;
     margin: 0;
@@ -100,3 +111,6 @@
 .menu__dropdown li:hover {
     background-color: #606060;
 }
+
+
+

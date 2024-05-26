@@ -1,0 +1,40 @@
+.tbl {
+
+    .tbl__col--1 {
+        flex-basis: 20%;
+    }
+    .tbl__col--2{
+        flex-basis: 50%;
+    }
+    .tbl__col--3, .tbl__col--4   {
+        flex-basis: 12%;
+        text-align: center;
+    }
+}
+
+.tbl__form {
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.tbl__form__group {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.tbl__btn__add {
+  float: right;
+  position: relative;
+  top: 20px;
+}
+
+@media (max-width: 900px) {
+    .tbl__col--1, .tbl__col--2, .tbl__col--3, .tbl__col--4{
+        flex-basis: 20%;
+    }
+}
+/* 
+    Created on : 26 may 2024, 18:36:07
+    Author     : Oliver
+*/
+

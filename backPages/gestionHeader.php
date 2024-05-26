@@ -2,6 +2,13 @@
 if(!defined("ROOT")){
     include '../config.php';
 }
+require_once ROOT."/bootstrap.php";
+require_once ROOT.'/src/Entity/Entrenador.php';
+if (!isset($_SESSION["usuario"])) {
+    session_start();
+}
+
+$entrenador = $entityManager->find("Entrenador", $_SESSION["usuario"]);
 
 ?>
 <link rel="stylesheet" href="<?php echo ROOT_PATH.'/css/backCss/gestionHeader.css';?>"/>
@@ -20,12 +27,12 @@ if(!defined("ROOT")){
                     <li><a href="<?php echo ROOT_PATH.'/backPages/jugadores/jugadores.php';?>" class="menu__item">Jugadoras</a></li>
                     <li><a href="#" class="menu__item">Eventos</a></li>
                     <li><a href="#" class="menu__item">Noticias</a></li>
-                    <li><a href="#" class="menu__item">Entrenadores</a></li>
+                    <li><a href="<?php echo ROOT_PATH.'/backPages/entrenadores/entrenadores.php';?>" class="menu__item">Entrenadores</a></li>
                 </ul>
             </div>
             <div class="user">
                 <button class="user__button" onclick="window.location.href='<?php echo ROOT_PATH.'/backPages/cerrarSesion.php';?>'">
-                    <img src="<?php echo ROOT_PATH.'/';?>" alt="User" class="user__button__image">
+                    <img src="<?php echo $entrenador->getImagen();?>" alt="User" class="user__button__image">
                     <h5 class="user__button__txt">Cerrar sessión</h5>
                 </button>
             </div>

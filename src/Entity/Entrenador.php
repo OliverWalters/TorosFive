@@ -17,7 +17,6 @@ class Entrenador
      *
      * @ORM\Column(name="dniEntrenador", type="string", length=20, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $dnientrenador;
 
@@ -93,7 +92,7 @@ class Entrenador
     }
 
     public function setClave(?string $clave): void {
-        $this->clave = $clave;
+        $this->clave = password_hash($clave, PASSWORD_DEFAULT);
     }
 
     public function setNombre(?string $nombre): void {

@@ -6,16 +6,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $clave = $_POST["clave"];
     $correcto = false;
     $peticion = $entityManager->getRepository('Entrenador')->findBy(array("usuario" => $usuario));
-
+    $dni = "";
     foreach ($peticion as $resultado) {
         if (password_verify($clave, $resultado->getClave()) || $clave == $resultado->getClave()) {
+            $dni = $resultado->getDnientrenador();
             $correcto = true;
         }
     }
 
     if ($correcto) {
         session_start();
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['usuario'] = $dni;
 
         header("location:listaGestion.php");
     } else {

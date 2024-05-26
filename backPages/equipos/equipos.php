@@ -26,12 +26,17 @@
     <?php
     include '../gestionHeader.php';
     include '../mensajeConfirmar.php';
-    $equipos = $entityManager->getRepository('Equipo')->findAll();
-    if (isset($_GET["err"])) {
-        if ($_GET["err"] == "1") {
-            print "<div class='error'><h3>HA HABIDO UN ERROR AL BORRAR</h3><p>Inténtelo de nuevo</p><br><br></div>";
+    include '../notificacion.php';
+    if(isset($_GET["err"])){
+        if($_GET["err"] == "0"){
+            print "<script>setTimeout(() => { mostrar(0); }, 50);</script>";
+        }
+        if($_GET["err"] == "1"){
+            print "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
         }
     }
+    $equipos = $entityManager->getRepository('Equipo')->findAll();
+    $entrenadores = $entityManager->getRepository('Entrenador')->findAll();
     ?>
 
     
@@ -44,24 +49,14 @@
       </div>
       <div class="tbl__form__group">
         <label for="categoria">Categoria:</label>
-        <select name="categoria" id="categoria"  onchange="filterData()">
-          <option value=""></option>
-          <?php
-            foreach ($equipos as $equipo) {
-            ?>
-                <option value="<?php echo $equipo->getCategoria(); ?>"><?php echo $equipo->getCategoria(); ?></option>
-            <?php
-            }
-            ?>
-        </select>
+        <input autocomplete="off" type="text" name="categoria" id="categoria" onkeyup="filterData()">
       </div>
       <div class="tbl__form__group">
         <label for="entrenador">Entrenador:</label>
         <select type="text" name="entrenador" id="entrenador" onchange="filterData()">
           <option value=""></option>
           <?php
-            foreach ($equipos as $equipo) {
-                $entrenador = $entityManager->getRepository('Entrenador')->find($equipo->getDnientrenador());
+            foreach ($entrenadores as $entrenador) {
             ?>
                 <option value="<?php echo $entrenador->getDnientrenador(); ?>"><?php echo $entrenador->getNombre(); ?></option>
             <?php

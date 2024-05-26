@@ -48,7 +48,7 @@ require_once ROOT."/bootstrap.php";
             </a>
         </li>
         <li class="gestion__elemento">
-            <a class="gestion__enlace" href="">
+            <a class="gestion__enlace" href="entrenadores/entrenadores.php">
                 <i class="fa-solid fa-user-gear gestion__icono"></i>
                 Gestión de Entrenadores
             </a>

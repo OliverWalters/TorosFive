@@ -12,11 +12,11 @@ $result;
 $img = "";
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    $result = $entityManager->getRepository('Jugador')->find($_GET["jug"]);
+    $result = $entityManager->getRepository('Entrenador')->find($_GET["entr"]);
 }
     
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $result = $entityManager->getRepository('Jugador')->find($_GET["jug"]);
+    $result = $entityManager->getRepository('Entrenador')->find($_GET["entr"]);
     try {
         if($_POST["imgChange"]){
             if ($_FILES['img']['error'] === UPLOAD_ERR_OK) {
@@ -25,34 +25,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $nombre_archivo = $_FILES['img']['name'];
 
                 // Directorio donde se guardará la imagen (ajusta la ruta según tus necesidades)
-                $directorio_destino = ROOT.'/images/jugadores/';
+                $directorio_destino = ROOT.'/images/entrenadores/';
 
                 // Mover el archivo cargado al directorio de destino
                 $ruta_destino = $directorio_destino . $nombre_archivo;
                 if (move_uploaded_file($nombre_temporal, $ruta_destino)) {
-                    $img = ROOT_PATH.'/images/jugadores/'.$nombre_archivo;
+                    $img = ROOT_PATH.'/images/entrenadores/'.$nombre_archivo;
                 } else {
-                    header("location:jugadores.php?err=1");
+                    header("location:entrenador.php?err=1");
                 }
             } else {
-                header("location:jugadores.php?err=1");
+                header("location:entrenador.php?err=1");
             }
         }
         
-        
-        $result->setDnijugador($_POST["dni"]);
+        $result->setDnientrenador($_POST["dni"]);
         if($_POST["imgChange"]){
             $result->setImagen($img);
         }
         $result->setNombre($_POST["nombre"]);
-        $result->setPosicion($_POST["posicion"]);
+        $result->setUsuario($_POST["usuario"]);
+        $result->setClave($_POST["clave"]); 
         $result->setNacimiento(new DateTime($_POST["nac"]));
         $entityManager->persist($result);
-        $entityManager->flush();
+        if($_POST["clave"] != $_POST["repe"]){
+            header("location:entrenadores.php?err=1");
+        }
+        else{
+            $entityManager->flush();
+            header("location:entrenadores.php?err=0");
+        }
         
-        header("location:jugadores.php?err=0");
     } catch (PDOException $e) {
-        header("location:jugadores.php?err=1");
+        header("location:entrenadores.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();
     }
     
@@ -74,13 +79,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             include '../gestionHeader.php';
             
         ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?jug=".$_GET["jug"];?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?entr=".$_GET["entr"];?>" method="post" enctype="multipart/form-data">
             DNI:
-            <input required autocomplete="off" type="text" name="dni" id="dni" value="<?php echo $result->getDnijugador();?>"><br><br>
+            <input required autocomplete="off" type="text" name="dni" id="dni" value="<?php echo $result->getDnientrenador();?>"><br><br>
             Nombre:
             <input required autocomplete="off" type="text" name="nombre" id="nombre" value="<?php echo $result->getNombre();?>"><br><br>
-            Posición:
-            <input required autocomplete="off" type="text" name="posicion" id="posicion" value="<?php echo $result->getPosicion();?>"><br><br>
+            Usuario:
+            <input required autocomplete="off" type="text" name="usuario" id="usuario" value="<?php echo $result->getUsuario();?>"><br><br>
+            Clave:
+            <input required autocomplete="off" type="password" name="clave" id="clave"><br><br>
+            Repita clave:
+            <input required autocomplete="off" type="password" name="repe" id="repe" ><br><br>
             Nacimiento:
             <input required autocomplete="off" type="date" name="nac" id="nac" value="<?php echo $result->getNacimiento()->format('Y-m-d');?>"><br><br>
             Cambiar imagen:
