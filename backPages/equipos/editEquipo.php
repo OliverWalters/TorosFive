@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $entrenador = $entityManager->getRepository('Entrenador')->find($_POST["entrenador"]);
         $result->setDnientrenador($entrenador);
 
-        header("location:equipos.php");
+        header("location:equipos.php?err=0");
     } catch (PDOException $e) {
         header("location:editEquipo.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();

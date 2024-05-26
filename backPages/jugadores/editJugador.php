@@ -32,10 +32,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if (move_uploaded_file($nombre_temporal, $ruta_destino)) {
                     $img = $ruta_destino;
                 } else {
-                    throw new Exception;//controlar error
+                    header("location:agregarJugador.php?err=1");
                 }
             } else {
-                throw new Exception;//controlar error
+                header("location:agregarJugador.php?err=1");
             }
         }
         
@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $entityManager->persist($result);
         $entityManager->flush();
         
-        header("location:jugadores.php");
+        header("location:jugadores.php?err=0");
     } catch (PDOException $e) {
         header("location:agregarJugador.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();

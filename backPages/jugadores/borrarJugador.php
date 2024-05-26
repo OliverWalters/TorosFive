@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
         $entityManager->remove($jugador);
         $entityManager->flush();
-        header("location:jugadores.php");
+        header("location:jugadores.php?err=0");
     } catch (Exception $ex) {
         header("location:jugadores.php?err=1");
     }

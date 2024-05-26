@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $entityManager->persist($nuevo);
         $entityManager->flush();
 
-        header("location:equipos.php");
+        header("location:equipos.php?err=0");
     } catch (PDOException $e) {
         header("location:agregarEquipo.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();

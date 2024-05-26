@@ -20,15 +20,17 @@ if(!defined("ROOT")){
                     <li><a href="<?php echo ROOT_PATH.'/backPages/jugadores/jugadores.php';?>" class="menu__item">Jugadoras</a></li>
                     <li><a href="#" class="menu__item">Eventos</a></li>
                     <li><a href="#" class="menu__item">Noticias</a></li>
+                    <li><a href="#" class="menu__item">Entrenadores</a></li>
                 </ul>
             </div>
             <div class="user">
-                <button class="user__button">
-                    <img src="<?php echo ROOT_PATH.'/';?>" alt="User" class="user__image">
-                    <i class="fa-solid fa-caret-down user__icon" style="color: #ffffff;"></i>
+                <button class="user__button" onclick="window.location.href='<?php echo ROOT_PATH.'/backPages/cerrarSesion.php';?>'">
+                    <img src="<?php echo ROOT_PATH.'/';?>" alt="User" class="user__button__image">
+                    <h5 class="user__button__txt">Cerrar sessión</h5>
                 </button>
             </div>
         </div>
     </div>
 </header>
+
 

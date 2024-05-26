@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
         $entityManager->remove($equipo);
         $entityManager->flush();
-        header("location:equipos.php");
+        header("location:equipos.php?err=0");
     } catch (Exception $ex) {
         header("location:equipos.php?err=1");
     }

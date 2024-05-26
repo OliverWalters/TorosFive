@@ -8,11 +8,7 @@ require_once ROOT.'/src/Entity/Equipo.php';
 require_once ROOT.'/src/Entity/Jugador.php';
 require_once ROOT.'/src/Entity/Entrenador.php';
 require_once ROOT.'/src/Entity/Equipojugador.php';
-if (isset($_GET["err"])) {
-    if ($_GET["err"] == "1") {
-        print "<div class='error'><h3>HA HABIDO UN ERROR AL BORRAR</h3><p>Inténtelo de nuevo</p><br><br></div>";
-    }
-}
+
 $team = $_GET["team"];
 
 try {
@@ -44,7 +40,7 @@ try {
         }
     }
 } catch (Exception $ex) {
-    echo "error";
+    header("location:editEquipo.php?err=1");
 }
 
 ?>
@@ -67,13 +63,21 @@ try {
 <body class="body--margin">
     <?php
     include '../gestionHeader.php';
+    if (isset($_GET["err"])) {
+        if ($_GET["err"] == "1") {
+            print "<div class='error'><h3>HA HABIDO UN ERROR AL BORRAR</h3><p>Inténtelo de nuevo</p><br><br></div>";
+        }
+    }
     ?>
     <div class="box">
         <div class="box__item">
             <div class="tbl">
                 <h2 class="tbl__title">Equipo<small class="tbl__subtitle"></small></h2>
-                <input type="text" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post"><input type="submit" value="Eliminar">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post">
+                    <div class="tbl__inputs">
+                        <input type="text" placeholder="Nombre de jugadora" onklaceholder="Nombre de jugadora"eyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
+                        <input type="submit" value="Eliminar">
+                    </div>
                     <li class="tbl__header">
                         <div class="tbl__col tbl__col--1">Elegir</div>
                         <div class="tbl__col tbl__col--2">Jugadora</div>
@@ -86,8 +90,11 @@ try {
         <div class="box__item">
             <div class="tbl">
                 <h2 class="tbl__title">Jugadoras<small class="tbl__subtitle"></small></h2>
-                <input type="text" onkeyup="listarJugadores(<?php echo $team; ?>)" id="nombreJug" autocomplete="new-password">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=1" method="post"><input type="submit" value="Añadir">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=1" method="post">
+                    <div class="tbl__inputs">
+                        <input type="text" placeholder="Nombre de jugadora" onkeyup="listarJugadores(<?php echo $team; ?>)" id="nombreJug" autocomplete="new-password">
+                        <input type="submit" value="Añadir">
+                    </div>
                     <li class="tbl__header">
                         <div class="tbl__col tbl__col--1">Elegir</div>
                         <div class="tbl__col tbl__col--2">Jugadora</div>

@@ -77,3 +77,8 @@ h2 small {
         text-align: right;
     }
 }
+
+.deleteBtn{
+    all:unset !important;
+    cursor:pointer !important;
+}

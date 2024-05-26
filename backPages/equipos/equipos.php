@@ -25,6 +25,7 @@
 <body class="body--margin">
     <?php
     include '../gestionHeader.php';
+    include '../mensajeConfirmar.php';
     $equipos = $entityManager->getRepository('Equipo')->findAll();
     if (isset($_GET["err"])) {
         if ($_GET["err"] == "1") {
@@ -70,7 +71,7 @@
       </div>
     </form>
     <button id="reset" onclick="reset()">Reset <i class="fa-solid fa-arrows-rotate"></i></button>
-    <button class="tbl__btn__add" onclick="window.location.href='agregarEquipo.php';">Añadir jugador <i class="fa-solid fa-user-plus"></i> </button>
+    <button class="tbl__btn__add" onclick="window.location.href='agregarEquipo.php';">Añadir equipo <i class="fa-solid fa-user-plus"></i> </button>
     
     <ul class="tbl__list" id="table">
     </ul>

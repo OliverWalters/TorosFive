@@ -50,7 +50,7 @@ require_once ROOT."/bootstrap.php";
         <li class="gestion__elemento">
             <a class="gestion__enlace" href="">
                 <i class="fa-solid fa-user-gear gestion__icono"></i>
-                Gestión de Entrenador
+                Gestión de Entrenadores
             </a>
         </li>
     </ul>

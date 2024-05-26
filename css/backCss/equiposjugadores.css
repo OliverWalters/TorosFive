@@ -18,3 +18,9 @@
     Author     : Oliver
 */
 
+
+.tbl__inputs{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

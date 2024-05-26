@@ -1,0 +1,123 @@
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+.exterior {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 9999999;
+    transition: ease-in-out 0.8s;
+}
+
+.ocultar {
+    display: none;
+    transition: opacity 0.8s;
+}
+hr{
+    margin: 10px 0;
+}
+.alerta {
+    position: fixed;
+    z-index: 999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+
+}
+
+.aparecer {
+    opacity: 1;
+    transition: ease-in-out 0.3s;
+}
+
+.alerta * {
+    box-sizing: border-box;
+}
+
+.alerta__formato {
+    font-family: 'Montserrat', 'Open Sans', Helvetica, 'Arial', sans-serif !important;
+    border-top: solid 5px #e7505a;
+    background-color: #fff;
+    opacity: 1;
+    padding: 20px 40px;
+    line-height: 1.3em;
+    text-align: center;
+    background-size: 20px;
+    pointer-events: auto;
+    margin: auto;
+    width: 90%;
+    border-radius: 7px;
+    /*----*/
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    color: #000;
+    box-shadow: 0 0 15px 1px gray;
+}
+
+.alerta__titulo {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.alerta__txt {
+    font-size: 15px;
+    word-wrap: break-word;
+    margin-bottom: 25px;
+}
+
+.alerta__btn {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.btn {
+    all: unset;
+    cursor: pointer;
+    padding: 7px 15px;
+    border-radius: 5px;
+    width: 65px;
+
+}
+
+.btn--red {
+    border: #d34952 solid 0.8px;
+    color: white;
+    background: #e7505a;
+}
+
+.btn--red:hover {
+    background: #d34952;
+}
+
+.btn--neutro {
+    border: #bfbfbf solid 0.8px;
+    background: #eaeaea;
+}
+
+.btn--neutro:hover {
+    background: lightgrey;
+}
+
+@media (max-width: 720px) {
+    .alerta__btn {
+        width: 100%;
+    }
+
+    .btn {
+        padding: 7px 15px;
+        margin: 0 10px;
+    }
+}
+/* 
+    Created on : 26 may 2024, 12:27:00
+    Author     : Oliver
+*/
+

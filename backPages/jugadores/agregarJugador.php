@@ -28,17 +28,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if (move_uploaded_file($nombre_temporal, $ruta_destino)) {
                     $img = $ruta_destino;
                 } else {
-                    throw new Exception;//controlar error
+                    header("location:jugadores.php?err=1");
                 }
             } else {
-                throw new Exception;//controlar error
+                header("location:jugadores.php?err=1");
             }
         }
         
         $nuevo = new Jugador();
         $nuevo->setDnijugador($_POST["dni"]);
         if($_POST["imgChange"]){
-            $result->setImagen($img);
+            $nuevo->setImagen($img);
         }
         $nuevo->setNombre($_POST["nombre"]);
         $nuevo->setPosicion($_POST["posicion"]);
@@ -46,9 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $entityManager->persist($nuevo);
         $entityManager->flush();
         
-        header("location:jugadores.php");
+        header("location:jugadores.php?err=0");
     } catch (PDOException $e) {
-        header("location:agregarJugador.php?err=1");
+        header("location:jugadores.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();
     }
     

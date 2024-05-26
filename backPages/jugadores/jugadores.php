@@ -29,9 +29,14 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
     <body class="body--margin">
         <?php
             include '../gestionHeader.php';
+            include '../mensajeConfirmar.php';
+            include '../notificacion.php';
             if(isset($_GET["err"])){
+                if($_GET["err"] == "0"){
+                    print "<script>setTimeout(() => { mostrar(0); }, 50);</script>";
+                }
                 if($_GET["err"] == "1"){
-                    print "<div class='error'><h3>ERROR AL EDITAR LOS DATOS</h3><p>Inténtelo de nuevo</p><br><br></div>";
+                    print "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
                 }
             }
             
