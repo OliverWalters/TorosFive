@@ -1,6 +1,5 @@
 body {
     font-family: 'lato', sans-serif;
-    background-color: #f1f1f1;
 }
 /*todo*/
 
@@ -129,4 +128,13 @@ h2 small {
 .deleteBtn{
     all:unset !important;
     cursor:pointer !important;
+}
+
+.noData {
+    text-align: center;
+    color: #333;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    /*text-shadow: rgba(255, 0, 0, 0.7) 0 0 10px;*/
 }

@@ -70,6 +70,6 @@ if ($jugadores != null) {
         </li>';
   }
 } else {
-  $output .= '<h3>No Data Found</h3>';
+$output .= '<h2 class="noData">No se han encontrado datos</h2>';
 }
 echo $output;
