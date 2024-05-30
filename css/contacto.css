@@ -1,0 +1,171 @@
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+    * {
+        font-family: 'Montserrat', 'Open Sans', Helvetica, 'Arial', sans-serif;
+    }
+    
+    #map {
+        width: 80%;
+        height: 250px;
+        margin: auto;
+    }
+
+    .container {
+        border:3px solid white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        background-color: #282823 ;
+        /*background-image: linear-gradient(150deg, #282823 65%, #fb25ff 95%);*/
+        color: white;
+        border-radius: 40px;
+        padding: 10px 0  30px 0;
+        overflow: hidden;
+        left: 50%;
+        transform: translateX( -50%);
+    }
+
+    .container__fondo{
+        
+        width: 70%;
+        height: 1200px;
+        background-image: linear-gradient(to top, #7500b6, #7500b6, fuchsia, fuchsia);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-30%, -50%);
+        box-shadow: 0 0 50px 1px #000000;
+    }
+    .contacto {
+        z-index:2;
+        width: 50%;
+        height: 100%;
+    }
+
+    .mapaYdatos {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mapa {
+        width: 100%;
+        height: 120%;
+    }
+
+    .info {
+        width: 100%;
+        height: 80%;
+    }
+
+
+    .mapa__title, .info__title {
+        text-align: center;
+        margin: 0.67em auto;
+    }
+
+
+    h2.contacto__title {
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    .info__text,  .info__social {
+        text-align: center;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .icono {
+        color: white;
+        font-size: 30px;
+        margin: 0 10px;
+    }
+
+    .contacto__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+    }
+
+    .contacto__label {
+        margin: 0;
+        align-self: flex-start;
+        /* Add this line */
+    }
+
+    .contacto__input,
+    .contacto__textarea {
+        margin: 10px 0 30px 0;
+        width: 90%;
+        max-width: 300px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .contacto__textarea {
+        max-height: 100px;
+    }
+
+    .contacto__button {
+        margin: 10px 0;
+        padding: 10px 20px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .contacto__button:hover {
+        box-shadow: inset 0 0 0 20rem rgba(0, 0, 0, .0625);
+    }
+    .contacto__button:active {
+        box-shadow: inset 0 0 0 20rem rgba(0, 0, 0, .125), inset 0 3px 4px 0 rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .125);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .contacto,
+        .mapaYdatos {
+            width: 80%;
+        }
+
+        .contacto{
+            margin-bottom: 100px;
+        }
+        
+        .contacto__input,
+        .contacto__textarea {
+            width: 100%;
+        }
+        .container__fondo{
+            width: 300%;
+            height: 800px;
+            top: -100px;
+            left: 50%;
+            transform: translateX( -50%);
+        }
+    }
+/* 
+    Created on : 30 may 2024, 18:28:51
+    Author     : Oliver
+*/
+
