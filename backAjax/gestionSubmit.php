@@ -64,7 +64,7 @@ if ($jugadores != null) {
   foreach ($jugadores as $jugador) {
       $output .= 
         '<li class="tbl__row">
-            <div class="tbl__col tbl__col--1" data-label="Seleccionado">
+            <div class="tbl__col tbl__col--1">
                 <div class="checkbox-wrapper-59">
                     <label class="switch">
                         <input type="checkbox" name="opciones[]" value="'.$jugador->getDnijugador().':'.$_GET["team"].'">
@@ -72,7 +72,7 @@ if ($jugadores != null) {
                     </label>
                 </div>
             </div>
-            <div class="tbl__col tbl__col--2" data-label="Jugadora">' . $jugador->getNombre() . '</div>
+            <div class="tbl__col tbl__col--2">' . $jugador->getNombre() . '</div>
         </li>';
       
   }
