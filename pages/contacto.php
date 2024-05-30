@@ -21,18 +21,21 @@
         <div class="container__fondo"></div>
         <div class="contacto">
             <h2 class="contacto__title">CONTACTA CON NOSOTROS</h2>
-            <form action="" class="contacto__form">
-                <label for="name" class="contacto__label">Nombre:</label>
-                <input placeholder="Nombre" type="text" id="name" name="name" class="contacto__input" required>
+            <form action="email.php" class="contacto__form" method="POST">
+                <label for="nombre" class="contacto__label">Nombre:</label>
+                <input placeholder="Nombre" type="text" id="nombre" name="nombre" class="contacto__input" required autocomplete="off">
                 
                 <label for="email" class="contacto__label">Email:</label>
-                <input placeholder="Correo" type="email" id="email" name="email" class="contacto__input" required>
+                <input placeholder="Correo" type="email" id="email" name="email" class="contacto__input" required autocomplete="off">
                 
                 <label for="tfn" class="contacto__label">Teléfono:</label>
-                <input placeholder="Número de teléfono" type="tfn" id="tfn" name="tfn" class="contacto__input" required>
+                <input placeholder="Número de teléfono" type="tfn" id="tfn" name="tfn" class="contacto__input" required autocomplete="off">
                 
-                <label for="message" class="contacto__label">Mensaje:</label>
-                <textarea placeholder="Escriba su mensaje" name="message" id="message" cols="30" rows="10" class="contacto__textarea" required></textarea>
+                <label for="asunto" class="contacto__label">Asunto:</label>
+                <input placeholder="Asunto" type="asunto" id="asunto" name="asunto" class="contacto__input" required autocomplete="off">
+                
+                <label for="mensaje" class="contacto__label">Mensaje:</label>
+                <textarea placeholder="Escriba su mensaje" name="mensaje" id="mensaje" cols="30" rows="10" class="contacto__textarea" required autocomplete="off"></textarea>
                 <button type="submit" class="contacto__button">Enviar</button>
             </form>
         </div>

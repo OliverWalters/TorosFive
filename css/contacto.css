@@ -110,7 +110,7 @@
 
     .contacto__input,
     .contacto__textarea {
-        margin: 10px 0 30px 0;
+        margin: 10px 0;
         width: 90%;
         max-width: 300px;
         padding: 10px;
