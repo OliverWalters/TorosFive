@@ -36,7 +36,7 @@ require_once ROOT."/bootstrap.php";
             </a>
         </li>
         <li class="gestion__elemento">
-            <a class="gestion__enlace" href="">
+            <a class="gestion__enlace" href="eventos/eventos.php">
                 <i class="fa-regular fa-calendar gestion__icono"></i>
                 Gestión de Eventos
             </a>
