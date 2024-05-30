@@ -32,12 +32,12 @@
 <style>
     .notification--error {
         background-image: url(<?php echo ROOT_PATH;?>/images/iconos/err.png) !important;
-        background-color: #e7505a;
+        background-color: #f3282d;
     }
 
     .notification--acierto {
         background-image: url(<?php echo ROOT_PATH;?>/images/iconos/tick.png) !important;
-        background-color: #26c281;
+        background-color: #2ac761;
     }
 </style>
 

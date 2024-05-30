@@ -48,8 +48,8 @@ if ($eventos != null) {
             <div class="tbl__col tbl__col--1" data-label="Nombre">' . $evento->getNombre() . '</div>
             <div class="tbl__col tbl__col--2" data-label="Fecha">' . $evento->getFecha()->format('d-m-Y') . '</div>
             <div class="tbl__col tbl__col--3" data-label="Descripción">' . $evento->getDescripcion() . '</div>
-            <div class="tbl__col tbl__col--4" data-label="Editar"><a href=\'editEvento.php?event=' . $evento->getIdevento() . '\'><i class="fa-solid fa-pen-to-square" style="color: #ffde2e;font-size: 20px"></i></a></div>
-            <div class="tbl__col tbl__col--5" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarEvento.php?event=' . $evento->getIdevento() . '\')"><i class="fa-solid fa-trash" style="color: red"></i></button></div>
+            <div class="tbl__col tbl__col--4" data-label="Editar"><a href=\'editEvento.php?event=' . $evento->getIdevento() . '\'><i class="fa-solid fa-pen-to-square"></i></a></div>
+            <div class="tbl__col tbl__col--5" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarEvento.php?event=' . $evento->getIdevento() . '\')"><i class="fa-solid fa-trash"></i></button></div>
         </li>';
   }
 } else {

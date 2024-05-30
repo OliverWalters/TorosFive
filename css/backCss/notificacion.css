@@ -32,12 +32,12 @@
 
 .notification--error {
     /*background-image: url(err.png) !important;    Esta en el mismo php por las rutas*/
-    background-color: #e7505a;
+    /*contacto.php*/
 }
 
 .notification--acierto {
     /*background-image: url(tick.png) !important;   Esta en el mismo php por las rutas*/
-    background-color: #26c281;
+    /*contacto.php*/
 }
 
 .notification__item__title {

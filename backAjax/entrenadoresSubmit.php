@@ -46,8 +46,8 @@ if ($entrenadores != null) {
         '<li class="tbl__row">
             <div class="tbl__col tbl__col--1" data-label="Nombre">' . $entrenador->getNombre() . '</div>
             <div class="tbl__col tbl__col--2" data-label="Usuario">' . $entrenador->getUsuario() . '</div>
-            <div class="tbl__col tbl__col--3" data-label="Editar"><a href=\'editEntrenador.php?entr=' . $entrenador->getDnientrenador() . '\'><i class="fa-solid fa-pen-to-square" style="color: #ffde2e;font-size: 20px"></i></a></div>
-            <div class="tbl__col tbl__col--4" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarEntrenador.php?entr=' . $entrenador->getDnientrenador() . '\')"><i class="fa-solid fa-trash" style="color: red"></i></button></div>
+            <div class="tbl__col tbl__col--3" data-label="Editar"><a href=\'editEntrenador.php?entr=' . $entrenador->getDnientrenador() . '\'><i class="fa-solid fa-pen-to-square"></i></a></div>
+            <div class="tbl__col tbl__col--4" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarEntrenador.php?entr=' . $entrenador->getDnientrenador() . '\')"><i class="fa-solid fa-trash"></i></button></div>
         </li>';
   }
 } else {

@@ -24,7 +24,11 @@
 }
 
 .logo__image {
-    height: 30px;
+    position:absolute;
+    clip-path: inset(16px 0 0 0);
+    top: -10px;
+    left:15px;
+    height: 70px;
 }
 
 .controls {
