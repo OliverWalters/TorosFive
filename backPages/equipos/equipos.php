@@ -44,17 +44,14 @@
     <h2 class="tbl__title">Gestión de equipos <small class="tbl__subtitle"></small></h2>
     <form id="form" class="tbl__form">
       <div class="tbl__form__group">
-        <label for="nombre">Nombre:</label>
-        <input autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()">
+        <input placeholder="Nombre" autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()" class="tbl__form__input">
       </div>
       <div class="tbl__form__group">
-        <label for="categoria">Categoria:</label>
-        <input autocomplete="off" type="text" name="categoria" id="categoria" onkeyup="filterData()">
+        <input placeholder="Categoria" autocomplete="off" type="text" name="categoria" id="categoria" onkeyup="filterData()" class="tbl__form__input">
       </div>
       <div class="tbl__form__group">
-        <label for="entrenador">Entrenador:</label>
-        <select type="text" name="entrenador" id="entrenador" onchange="filterData()">
-          <option value=""></option>
+        <select placeholder="Entrenador" type="text" name="entrenador" id="entrenador" onchange="filterData()" class="tbl__form__input">
+          <option value="" disabled selected hidden>Selecciona un entrenador</option>
           <?php
             foreach ($entrenadores as $entrenador) {
             ?>
@@ -65,8 +62,8 @@
         </select>
       </div>
     </form>
-    <button id="reset" onclick="reset()">Reset <i class="fa-solid fa-arrows-rotate"></i></button>
-    <button class="tbl__btn__add" onclick="window.location.href='agregarEquipo.php';">Añadir equipo <i class="fa-solid fa-user-plus"></i> </button>
+    <button id="reset" onclick="reset()" class="tbl__btn--reset tbl__btn"><i class="fa-solid fa-arrows-rotate"></i> Reset</button>
+    <button class="tbl__btn--add tbl__btn" onclick="window.location.href='agregarEquipo.php';"><i class="fa-solid fa-user-plus" style="margin-right:5px;"></i>  Añadir</button>
     
     <ul class="tbl__list" id="table">
     </ul>

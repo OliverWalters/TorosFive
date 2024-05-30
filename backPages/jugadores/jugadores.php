@@ -47,13 +47,11 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
     <h2 class="tbl__title">Gestión de jugadores<small class="tbl__subtitle"></small></h2>
     <form id="form" class="tbl__form">
       <div class="tbl__form__group">
-        <label for="nombre">Nombre:</label>
-        <input autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()">
+        <input placeholder="Nombre" autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()" class="tbl__form__input">
       </div>
       <div class="tbl__form__group">
-        <label for="equipo">Equipo:</label>
-        <select name="equipo" id="equipo" onchange="filterData()">
-          <option value=""></option>
+        <select placeholder="Equipo" name="equipo" id="equipo" onchange="filterData()" class="tbl__form__input">
+          <option value="" disabled selected hidden>Selecciona un equipo</option>
           <?php
             foreach($equipos as $equipo){
                 //$nombreEquipo = $entityManager->getRepository('Equipo')->find($equipo->getIdequipo());
@@ -77,12 +75,11 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
         </select>
       </div>
       <div class="tbl__form__group">
-        <label for="posicion">Posición:</label>
-        <input autocomplete="off" type="text" name="posicion" id="posicion" onkeyup="filterData()">
+        <input placeholder="Posición" autocomplete="off" type="text" name="posicion" id="posicion" onkeyup="filterData()" class="tbl__form__input">
       </div>
     </form>
-    <button id="reset" onclick="reset()">Reset <i class="fa-solid fa-arrows-rotate"></i></button>
-    <button class="tbl__btn__add" onclick="window.location.href='agregarJugador.php';">Añadir jugador <i class="fa-solid fa-user-plus"></i> </button>
+    <button id="reset" onclick="reset()" class="tbl__btn--reset tbl__btn"><i class="fa-solid fa-arrows-rotate"></i> Reset</button>
+    <button class="tbl__btn--add tbl__btn" onclick="window.location.href='agregarJugador.php';"><i class="fa-solid fa-user-plus" style="margin-right:5px;"></i>  Añadir</button>
     <ul class="tbl__list" id="table">
     </ul>
 </div>

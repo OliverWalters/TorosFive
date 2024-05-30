@@ -46,16 +46,15 @@ $entrenador = $entityManager->getRepository('Entrenador')->findAll();
     <h2 class="tbl__title">Gestión de entrenadores<br><small class="tbl__subtitle"></small></h2>
     <form id="form" class="tbl__form">
       <div class="tbl__form__group">
-        <label for="nombre">Nombre:</label>
-        <input autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()">
+        <input placeholder="Nombre" autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()" class="tbl__form__input">
       </div>
       <div class="tbl__form__group">
-        <label for="usuario">Usuario:</label>
-        <input autocomplete="off" type="text" name="usuario" id="usuario" onkeyup="filterData()">
+        <input placeholder="Usuario" autocomplete="off" type="text" name="usuario" id="usuario" onkeyup="filterData()" class="tbl__form__input">
       </div>
     </form>
-    <button id="reset" onclick="reset()">Reset <i class="fa-solid fa-arrows-rotate"></i></button>
-    <button class="tbl__btn__add" onclick="window.location.href='agregarEntrenador.php';">Añadir entrenador <i class="fa-solid fa-user-plus"></i> </button>
+    <button id="reset" onclick="reset()" class="tbl__btn--reset tbl__btn"><i class="fa-solid fa-arrows-rotate"></i> Reset</button>
+    <button class="tbl__btn--add tbl__btn" onclick="window.location.href='agregarEntrenador.php';"><i class="fa-solid fa-user-plus" style="margin-right:5px;"></i>  Añadir</button>
+    
     <ul class="tbl__list" id="table">
     </ul>
 </div>

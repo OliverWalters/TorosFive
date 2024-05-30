@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             include ROOT.'/backPages/goBack.php';
         ?>
         <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?jug=" . $_GET["jug"];?>" method="post" enctype="multipart/form-data">
-            <div class="form__title">Editar jugador</div>
+            <div class="form__title">Editar jugadora</div>
             <div class="form__group">
                 <label for="dni" class="form__label">DNI:</label>
                 <input required autocomplete="off" type="text" name="dni" id="dni" class="form__input" value="<?php echo $result->getDnijugador();?>"><br><br>
