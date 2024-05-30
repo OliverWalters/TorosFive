@@ -42,8 +42,9 @@ $output .= '<li class="tbl__header">
             <div class="tbl__col tbl__col--2">Categoria</div>
             <div class="tbl__col tbl__col--3">Entrenador</div>
             <div class="tbl__col tbl__col--4">Gestionar</div>
-            <div class="tbl__col tbl__col--5">Eliminar</div>
-            <div class="tbl__col tbl__col--6">Acceder</div>
+            <div class="tbl__col tbl__col--5">Editar</div>
+            <div class="tbl__col tbl__col--6">Eliminar</div>
+            <div class="tbl__col tbl__col--7"></div>
         </li>';
 
 if ($equipos != null) {
@@ -54,9 +55,10 @@ if ($equipos != null) {
             <div class="tbl__col tbl__col--1" data-label="Nombre">' . $equipo->getNombre() . '</div>
             <div class="tbl__col tbl__col--2" data-label="Categoria">' . $equipo->getCategoria() . '</div>
             <div class="tbl__col tbl__col--3" data-label="Entrenador">' . $entrenador->getNombre() . '</div>
-            <div class="tbl__col tbl__col--4" data-label="Gestionar"><a href="gestionarEquipo.php?team=' . $equipo->getIdequipo() . '"><i class="fa-solid fa-pen-to-square" style="color: #ffde2e;font-size: 20px"></i></a></div>
-            <div class="tbl__col tbl__col--5" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarEquipo.php?team=' . $equipo->getIdequipo() . '\')"><i class="fa-solid fa-trash" style="color: red"></i></button></div>
-            <div class="tbl__col tbl__col--6" data-label="Acceder"><a href="' . ROOT_PATH . '/backPages/jugadores/jugadores.php?team=' . $equipo->getIdequipo() . '"><i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="tbl__col tbl__col--4" data-label="Gestionar"><a href="gestionarEquipo.php?team=' . $equipo->getIdequipo() . '"><i class="fa-solid fa-gear" style="color: gray;font-size: 20px"></i></a></div>
+            <div class="tbl__col tbl__col--5" data-label="Editar"><a href="editEquipo.php?team=' . $equipo->getIdequipo() . '"><i class="fa-solid fa-pen-to-square" style="color: #ffde2e;font-size: 20px"></i></a></div>
+            <div class="tbl__col tbl__col--6" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarEquipo.php?team=' . $equipo->getIdequipo() . '\')"><i class="fa-solid fa-trash" style="color: red"></i></button></div>
+            <div class="tbl__col tbl__col--7" data-label="Acceder"><a href="' . ROOT_PATH . '/backPages/jugadores/jugadores.php?team=' . $equipo->getIdequipo() . '"><i class="fa-solid fa-chevron-right"></i></a></div>
         </li>';
 
     }

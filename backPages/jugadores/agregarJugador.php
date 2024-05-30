@@ -62,33 +62,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../css/app.css">
+        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/forms.css"/>
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/checkbox.css">
     </head>
     <body class="body--margin">
         <?php
             include '../gestionHeader.php';
-            
+            include ROOT.'/backPages/goBack.php';
         ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-            DNI:
-            <input required autocomplete="off" type="text" name="dni" id="dni" ><br><br>
-            Nombre:
-            <input required autocomplete="off" type="text" name="nombre" id="nombre" ><br><br>
-            Posición:
-            <input required autocomplete="off" type="text" name="posicion" id="posicion" ><br><br>
-            Nacimiento:
-            <input required autocomplete="off" type="date" name="nac" id="nac" ><br><br>
-            Cambiar imagen:
-            <div class="checkbox-wrapper-59">
-                <label for="imgChange" class="switch" >
-                    <input type="checkbox" name="imgChange" id="imgChange">
-                    <span class="slider"></span>
-                </label>
-            </div><br><br>
-            <label for="img">Imagen:
-            <input required autocomplete="off" type="file" name="img" id="img" accept="image/*" ><br><br>
-            </label>
-            <input type="submit" value="Guardar">
+        <form class="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
+            <div class="form__title">Añadir jugador</div>
+            <div class="form__group">
+                <label for="dni" class="form__label">DNI:</label>
+                <input required autocomplete="off" type="text" name="dni" id="dni" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="nombre" class="form__label">Nombre:</label>
+                <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="posicion" class="form__label">Posición:</label>
+                <input required autocomplete="off" type="text" name="posicion" id="posicion" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="nac" class="form__label">Nacimiento:</label>
+                <input required autocomplete="off" type="date" name="nac" id="nac" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
+                <label class="form__label">Cambiar imagen:</label>
+                <div class="checkbox-wrapper-59">
+                    <label for="imgChange" class="switch">
+                        <input type="checkbox" name="imgChange" id="imgChange">
+                        <span class="slider"></span>
+                    </label>
+                </div><br><br>
+            </div>
+            <div class="form__group">
+                <label for="img" class="form__label">Imagen:</label>
+
+                <!--
+                <div class="file-input-container">
+                    <button class="custom-file-input-button">Seleccionar Archivo</button>
+                    <input required autocomplete="off" type="file" name="img" id="img" accept="image/*" class="form__input form__input--file custom-file-input">
+                </div>
+                -->
+                <input required autocomplete="off" type="file" name="img" id="img" accept="image/*" class="form__input form__input--file">
+
+            </div>
+            <input class="form__submit" type="submit" value="Guardar">
         </form>
     </body>
     <script src="<?php echo ROOT_PATH;?>/backJs/enableImg.js"></script>

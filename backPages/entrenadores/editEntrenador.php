@@ -72,37 +72,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../css/app.css">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/checkbox.css">
+        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/forms.css"/>
         <script src="<?php echo ROOT_PATH;?>/backJs/enableImg.js"></script>
     </head>
     <body class="body--margin">
         <?php
             include '../gestionHeader.php';
-            
+            include ROOT.'/backPages/goBack.php';
         ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?entr=".$_GET["entr"];?>" method="post" enctype="multipart/form-data">
-            DNI:
-            <input required autocomplete="off" type="text" name="dni" id="dni" value="<?php echo $result->getDnientrenador();?>"><br><br>
-            Nombre:
-            <input required autocomplete="off" type="text" name="nombre" id="nombre" value="<?php echo $result->getNombre();?>"><br><br>
-            Usuario:
-            <input required autocomplete="off" type="text" name="usuario" id="usuario" value="<?php echo $result->getUsuario();?>"><br><br>
-            Clave:
-            <input required autocomplete="off" type="password" name="clave" id="clave"><br><br>
-            Repita clave:
-            <input required autocomplete="off" type="password" name="repe" id="repe" ><br><br>
-            Nacimiento:
-            <input required autocomplete="off" type="date" name="nac" id="nac" value="<?php echo $result->getNacimiento()->format('Y-m-d');?>"><br><br>
-            Cambiar imagen:
-            <div class="checkbox-wrapper-59">
-                <label class="switch" >
-                    <input type="checkbox" name="imgChange" id="imgChange">
-                    <span class="slider"></span>
-                </label>
-            </div><br><br>
-            Imagen:
-            <input autocomplete="off" type="file" name="img" id="img" accept="image/*"><br><br>
-            
-            <input type="submit" value="Guardar">
+        <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?entr=".$_GET["entr"];?>" method="post" enctype="multipart/form-data">
+            <div class="form__title">Editar entrenador</div>
+            <div class="form__group">
+                <label for="dni" class="form__label">DNI:</label>
+                <input required autocomplete="off" type="text" name="dni" id="dni" class="form__input" value="<?php echo $result->getDnientrenador();?>"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="nombre" class="form__label">Nombre:</label>
+                <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" value="<?php echo $result->getNombre();?>"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="usuario" class="form__label">Usuario:</label>
+                <input required autocomplete="off" type="text" name="usuario" id="usuario" class="form__input" value="<?php echo $result->getUsuario();?>"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="clave" class="form__label">Clave:</label>
+                <input required autocomplete="off" type="password" name="clave" id="clave" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="repe" class="form__label">Repita clave:</label>
+                <input required autocomplete="off" type="password" name="repe" id="repe" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
+                <label for="nac" class="form__label">Nacimiento:</label>
+                <input required autocomplete="off" type="date" name="nac" id="nac" class="form__input" value="<?php echo $result->getNacimiento()->format('Y-m-d');?>"><br><br>
+            </div>
+            <div class="form__group">
+                <label class="form__label">Cambiar imagen:</label>
+                <div class="checkbox-wrapper-59">
+                    <label for="imgChange" class="switch">
+                        <input type="checkbox" name="imgChange" id="imgChange">
+                        <span class="slider"></span>
+                    </label>
+                </div><br><br>
+            </div>
+            <div class="form__group">
+                <label for="img" class="form__label">Imagen:</label>
+                <input autocomplete="off" type="file" name="img" id="img" accept="image/*" class="form__input form__input--file"><br><br>
+            </div>
+            <input class="form__submit" type="submit" value="Guardar">
         </form>
     </body>
 </html>

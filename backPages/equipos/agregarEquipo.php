@@ -62,41 +62,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/checkbox.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/forms.css"/>
     <script src="<?php echo ROOT_PATH;?>/backJs/enableImg.js"></script>
 </head>
 
 <body class="body--margin">
     <?php
     include '../gestionHeader.php';
-
+    include ROOT.'/backPages/goBack.php';
     ?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        Nombre:
-        <input required autocomplete="off" type="text" name="nombre" id="nombre"><br><br>
-        Categoria:
-        <input required autocomplete="off" type="text" name="categoria" id="categoria"><br><br>
-        Entrenador:
-        <select required type="text" name="entrenador" id="entrenador">
-            <option value=""></option>
-            <?php
-            foreach ($entrenadores as $entrenador) {
-            ?>
-                <option value="<?php echo $entrenador->getDnientrenador(); ?>"><?php echo $entrenador->getNombre(); ?></option>
-            <?php
-            }
-            ?>
-        </select><br><br>
-        Cambiar imagen:
-        <div class="checkbox-wrapper-59">
-            <label class="switch" >
-                <input type="checkbox" name="imgChange" id="imgChange">
-                <span class="slider"></span>
-            </label>
-        </div><br><br>
-        Imagen:
-        <input autocomplete="off" type="file" name="img" id="img" accept="image/*"><br><br>
-           
-        <input type="submit" value="Guardar">
+    <form class="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <div class="form__title">Añadir equipo</div>
+        <div class="form__group">
+            <label for="nombre" class="form__label">Nombre:</label>
+            <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
+        </div>
+        <div class="form__group"></div>
+        <div class="form__group">
+            <label for="categoria" class="form__label">Categoria:</label>
+            <input required autocomplete="off" type="text" name="categoria" id="categoria" class="form__input"><br><br>
+        </div>
+        <div class="form__group">
+            <label for="entrenador" class="form__label">Entrenador:</label>
+            <select required type="text" name="entrenador" id="entrenador" class="form__input">
+                <option value=""></option>
+                <?php
+                foreach ($entrenadores as $entrenador) {
+                ?>
+                <option value="<?php echo $entrenador->getDnientrenador(); ?>">
+                    <?php echo $entrenador->getNombre(); ?>
+                </option>
+                <?php
+                }
+                ?>
+            </select><br><br>
+        </div>
+        <div class="form__group">
+            <label class="form__label">Cambiar imagen:</label>
+            <div class="checkbox-wrapper-59">
+                <label for="imgChange" class="switch">
+                    <input type="checkbox" name="imgChange" id="imgChange">
+                    <span class="slider"></span>
+                </label>
+            </div><br><br>
+        </div>
+        <div class="form__group">
+            <label for="img" class="form__label">Imagen:</label>
+            <input autocomplete="off" type="file" name="img" id="img" accept="image/*"
+                class="form__input form__input--file">
+        </div>
+        <input class="form__submit" type="submit" value="Guardar">
     </form>
 </body>
 
