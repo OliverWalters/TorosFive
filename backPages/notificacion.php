@@ -37,7 +37,7 @@
 
     .notification--acierto {
         background-image: url(<?php echo ROOT_PATH;?>/images/iconos/tick.png) !important;
-        background-color: #2ac761;
+        background-color: #31db6c;
     }
 </style>
 

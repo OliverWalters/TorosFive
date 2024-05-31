@@ -12,6 +12,7 @@ require_once ROOT.'/src/Entity/Equipojugador.php';
 $team = $_GET["team"];
 
 try {
+    $nombreEquipo = $entityManager->getRepository('Equipo')->find($team);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['opciones'])) {
             $opcionesSeleccionadas = $_POST['opciones'];
@@ -65,6 +66,7 @@ try {
     <?php
     include '../gestionHeader.php';
     include '../notificacion.php';
+    include '../goBack.php';
             if(isset($_GET["err"])){
                 if($_GET["err"] == "1"){
                     print "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
@@ -74,7 +76,7 @@ try {
     <div class="box">
         <div class="box__item">
             <div class="tbl">
-                <h2 class="tbl__title">Equipo<small class="tbl__subtitle"></small></h2>
+                <h2 class="tbl__title"><?php echo $nombreEquipo->getNombre(); ?><small class="tbl__subtitle"></small></h2>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post">
                     <div class="tbl__inputs">
                         <input class="tbl__input" type="text" placeholder="Nombre de jugadora" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
