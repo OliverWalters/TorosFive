@@ -106,6 +106,12 @@ h2 small {
 .tbl__btn--reset{
     background-color: #540061;;
 }
+
+.tbl__col {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 900px) {
     .tbl__header {
         font-weight: normal;

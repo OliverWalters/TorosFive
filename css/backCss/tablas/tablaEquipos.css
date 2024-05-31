@@ -11,11 +11,11 @@
     }
     .tbl__col--4, .tbl__col--5, .tbl__col--6   {
         flex-basis: 12%;
-        text-align: center;
+        justify-content: center;
     }
     .tbl__col--7   {
         flex-basis: 5%;
-        text-align: center;
+        justify-content: center;
     }
 }
 

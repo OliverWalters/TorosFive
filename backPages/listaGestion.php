@@ -42,7 +42,7 @@ require_once ROOT."/bootstrap.php";
             </a>
         </li>
         <li class="gestion__elemento">
-            <a class="gestion__enlace" href="">
+            <a class="gestion__enlace" href="noticias/noticias.php">
                 <i class="fa-solid fa-newspaper gestion__icono"></i>
                 Gestión de Noticias
             </a>

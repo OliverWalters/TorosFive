@@ -26,7 +26,7 @@ $entrenador = $entityManager->find("Entrenador", $_SESSION["usuario"]);
                     <li><a href="<?php echo ROOT_PATH.'/backPages/equipos/equipos.php';?>" class="menu__item">Equipos</a></li>
                     <li><a href="<?php echo ROOT_PATH.'/backPages/jugadores/jugadores.php';?>" class="menu__item">Jugadoras</a></li>
                     <li><a href="<?php echo ROOT_PATH.'/backPages/eventos/eventos.php';?>" class="menu__item">Eventos</a></li>
-                    <li><a href="#" class="menu__item">Noticias</a></li>
+                    <li><a href="<?php echo ROOT_PATH.'/backPages/noticias/noticias.php';?>" class="menu__item">Noticias</a></li>
                     <li><a href="<?php echo ROOT_PATH.'/backPages/entrenadores/entrenadores.php';?>" class="menu__item">Entrenadores</a></li>
                 </ul>
             </div>

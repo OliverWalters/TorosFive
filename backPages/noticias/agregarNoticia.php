@@ -4,7 +4,7 @@ if(!defined("ROOT")){
 }
 include ROOT.'/compruebaSesion.php';
 require_once ROOT."/bootstrap.php";
-require_once ROOT.'/src/Entity/Evento.php';
+require_once ROOT.'/src/Entity/Noticia.php';
 $img = "";
 
     
@@ -18,17 +18,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $nombre_archivo = $_FILES['img']['name'];
 
                 // Directorio donde se guardará la imagen (ajusta la ruta según tus necesidades)
-                $directorio_destino = ROOT.'/images/eventos/';
+                $directorio_destino = ROOT.'/images/noticias/';
 
                 // Mover el archivo cargado al directorio de destino
                 $ruta_destino = $directorio_destino . $nombre_archivo;
                 if (move_uploaded_file($nombre_temporal, $ruta_destino)) {
-                    $img = ROOT_PATH.'/images/eventos/'.$nombre_archivo;
+                    $img = ROOT_PATH.'/images/noticias/'.$nombre_archivo;
                 } else {
-                    header("location:eventos.php?err=1");
+                    header("location:noticias.php?err=1");
                 }
             } else {
-                header("location:eventos.php?err=1");
+                header("location:noticias.php?err=1");
             }
         }
         
@@ -42,9 +42,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $entityManager->persist($nuevo);
         $entityManager->flush();
         
-        header("location:eventos.php?err=0");
+        header("location:noticias.php?err=0");
     } catch (PDOException $e) {
-        header("location:eventos.php?err=1");
+        header("location:noticias.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();
     }
     
@@ -68,13 +68,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             include ROOT.'/backPages/goBack.php';
         ?>
         <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-            <div class="form__title">Editar evento</div>
+            <div class="form__title">Añadir noticia</div>
             <div class="form__group">
                 <label for="nombre" class="form__label">Nombre:</label>
-                <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" value="<?php echo $result->getNombre();?>"><br><br>
+                <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
             </div>
             <div class="form__group">
-                <label for="fecha" class="form__label">Fecha del evento:</label>
+                <label for="fecha" class="form__label">Fecha del noticia:</label>
                 <input required autocomplete="off" type="date" name="fecha" id="fecha" class="form__input"><br><br>
             </div>
             <div class="form__group">

@@ -77,15 +77,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label for="nombre" class="form__label">Nombre:</label>
                 <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" value="<?php echo $result->getNombre();?>"><br><br>
             </div>
-            <div class="form__group"></div>
             <div class="form__group">
                 <label for="fecha" class="form__label">Fecha del evento:</label>
                 <input required autocomplete="off" type="date" name="fecha" id="fecha" class="form__input" value="<?php echo $result->getFecha()->format('Y-m-d');?>"><br><br>
             </div>
             <div class="form__group">
                 <label for="descripcion" class="form__label">Descripción:</label>
-                <input required autocomplete="off" type="textarea" name="descripcion" id="descripcion" class="form__input" value="<?php echo $result->getDescripcion();?>"><br><br>
+                <textarea required autocomplete="off" name="descripcion" id="descripcion" class="form__input"><?php echo $result->getDescripcion();?></textarea><br><br>
             </div>
+            <div class="form__group"></div>
             <div class="form__group">
                 <label class="form__label">Cambiar imagen:</label>
                 <div class="checkbox-wrapper-59">

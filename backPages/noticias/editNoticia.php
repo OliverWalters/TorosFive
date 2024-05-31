@@ -4,12 +4,16 @@ if(!defined("ROOT")){
 }
 include ROOT.'/compruebaSesion.php';
 require_once ROOT."/bootstrap.php";
-require_once ROOT.'/src/Entity/Evento.php';
+require_once ROOT.'/src/Entity/Noticia.php';
+$result;
 $img = "";
 
+if($_SERVER["REQUEST_METHOD"] == "GET"){
+    $result = $entityManager->getRepository('Noticia')->find($_GET["not"]);
+}
     
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    
+    $result = $entityManager->getRepository('Noticia')->find($_GET["not"]);
     try {
         if($_POST["imgChange"]){
             if ($_FILES['img']['error'] === UPLOAD_ERR_OK) {
@@ -18,33 +22,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $nombre_archivo = $_FILES['img']['name'];
 
                 // Directorio donde se guardará la imagen (ajusta la ruta según tus necesidades)
-                $directorio_destino = ROOT.'/images/eventos/';
+                $directorio_destino = ROOT.'/images/noticias/';
 
                 // Mover el archivo cargado al directorio de destino
                 $ruta_destino = $directorio_destino . $nombre_archivo;
                 if (move_uploaded_file($nombre_temporal, $ruta_destino)) {
-                    $img = ROOT_PATH.'/images/eventos/'.$nombre_archivo;
+                    $img = ROOT_PATH.'/images/noticias/'.$nombre_archivo;
                 } else {
-                    header("location:eventos.php?err=1");
+                    header("location:noticias.php?err=1");
                 }
             } else {
-                header("location:eventos.php?err=1");
+                header("location:noticias.php?err=1");
             }
         }
         
-        $nuevo = new Evento();
+        
         if($_POST["imgChange"]){
-            $nuevo->setImagen($img);
+            $result->setImagen($img);
         }
-        $nuevo->setNombre($_POST["nombre"]);
-        $nuevo->setDescripcion($_POST["descripcion"]);
-        $nuevo->setFecha(new DateTime($_POST["fecha"]));
-        $entityManager->persist($nuevo);
+        $result->setNombre($_POST["nombre"]);
+        $result->setDescripcion($_POST["descripcion"]);
+        $result->setFecha(new DateTime($_POST["fecha"]));
+        $entityManager->persist($result);
         $entityManager->flush();
         
-        header("location:eventos.php?err=0");
+        header("location:noticias.php?err=0");
     } catch (PDOException $e) {
-        header("location:eventos.php?err=1");
+        header("location:noticias.php?err=1");
         //echo 'Error al conectar: ' . $e->getMessage();
     }
     
@@ -67,19 +71,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             include '../gestionHeader.php';
             include ROOT.'/backPages/goBack.php';
         ?>
-        <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-            <div class="form__title">Editar evento</div>
+        <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?not=" . $_GET["not"];?>" method="post" enctype="multipart/form-data">
+            <div class="form__title">Editar noticia</div>
             <div class="form__group">
                 <label for="nombre" class="form__label">Nombre:</label>
                 <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" value="<?php echo $result->getNombre();?>"><br><br>
             </div>
             <div class="form__group">
                 <label for="fecha" class="form__label">Fecha del evento:</label>
-                <input required autocomplete="off" type="date" name="fecha" id="fecha" class="form__input"><br><br>
+                <input required autocomplete="off" type="date" name="fecha" id="fecha" class="form__input" value="<?php echo $result->getFecha()->format('Y-m-d');?>"><br><br>
             </div>
             <div class="form__group">
                 <label for="descripcion" class="form__label">Descripción:</label>
-                <textarea required autocomplete="off" name="descripcion" id="descripcion" class="form__input"></textarea><br><br>
+                <textarea required autocomplete="off" name="descripcion" id="descripcion" class="form__input"><?php echo $result->getDescripcion();?></textarea><br><br>
             </div>
             <div class="form__group"></div>
             <div class="form__group">
