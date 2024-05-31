@@ -75,17 +75,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form__title">Añadir equipo</div>
         <div class="form__group">
             <label for="nombre" class="form__label">Nombre:</label>
-            <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
+            <input placeholder="Nombre" required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
         </div>
         <div class="form__group"></div>
         <div class="form__group">
             <label for="categoria" class="form__label">Categoria:</label>
-            <input required autocomplete="off" type="text" name="categoria" id="categoria" class="form__input"><br><br>
+            <input placeholder="Categoria" required autocomplete="off" type="text" name="categoria" id="categoria" class="form__input"><br><br>
         </div>
         <div class="form__group">
             <label for="entrenador" class="form__label">Entrenador:</label>
             <select required type="text" name="entrenador" id="entrenador" class="form__input">
-                <option value=""></option>
+                <option value="" disabled selected hidden>Selecciona un entrenador</option>
                 <?php
                 foreach ($entrenadores as $entrenador) {
                 ?>

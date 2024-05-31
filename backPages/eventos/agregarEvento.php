@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form__title">Editar evento</div>
             <div class="form__group">
                 <label for="nombre" class="form__label">Nombre:</label>
-                <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" value="<?php echo $result->getNombre();?>"><br><br>
+                <input placeholder="Nombre" required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" ><br><br>
             </div>
             <div class="form__group">
                 <label for="fecha" class="form__label">Fecha del evento:</label>
@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form__group">
                 <label for="descripcion" class="form__label">Descripción:</label>
-                <textarea required autocomplete="off" name="descripcion" id="descripcion" class="form__input"></textarea><br><br>
+                <textarea placeholder="Descripción" required autocomplete="off" name="descripcion" id="descripcion" class="form__input"></textarea><br><br>
             </div>
             <div class="form__group"></div>
             <div class="form__group">

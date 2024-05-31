@@ -90,7 +90,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form__group">
             <label for="entrenador" class="form__label">Entrenador:</label>
             <select required type="text" name="entrenador" id="entrenador" class="form__input">
-                <option value=""></option>
                 <?php
                 foreach ($entrenadores as $entrenador) {
                     if ($result->getDnientrenador()->getDnientrenador() == $entrenador->getDnientrenador()) {

@@ -91,16 +91,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input" value="<?php echo $result->getNombre();?>"><br><br>
             </div>
             <div class="form__group">
+                <label for="clave" class="form__label">Clave:</label>
+                <input placeholder="Contraseña" required autocomplete="off" type="password" name="clave" id="clave" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
                 <label for="usuario" class="form__label">Usuario:</label>
                 <input required autocomplete="off" type="text" name="usuario" id="usuario" class="form__input" value="<?php echo $result->getUsuario();?>"><br><br>
             </div>
             <div class="form__group">
-                <label for="clave" class="form__label">Clave:</label>
-                <input required autocomplete="off" type="password" name="clave" id="clave" class="form__input"><br><br>
-            </div>
-            <div class="form__group">
                 <label for="repe" class="form__label">Repita clave:</label>
-                <input required autocomplete="off" type="password" name="repe" id="repe" class="form__input"><br><br>
+                <input placeholder="Repita contraseña" required autocomplete="off" type="password" name="repe" id="repe" class="form__input"><br><br>
             </div>
             <div class="form__group">
                 <label for="nac" class="form__label">Nacimiento:</label>

@@ -74,15 +74,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form__title">Añadir jugadora</div>
             <div class="form__group">
                 <label for="dni" class="form__label">DNI:</label>
-                <input required autocomplete="off" type="text" name="dni" id="dni" class="form__input"><br><br>
+                <input placeholder="DNI" required autocomplete="off" type="text" name="dni" id="dni" class="form__input"><br><br>
             </div>
             <div class="form__group">
                 <label for="nombre" class="form__label">Nombre:</label>
-                <input required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
+                <input placeholder="Nombre" required autocomplete="off" type="text" name="nombre" id="nombre" class="form__input"><br><br>
             </div>
             <div class="form__group">
                 <label for="posicion" class="form__label">Posición:</label>
-                <input required autocomplete="off" type="text" name="posicion" id="posicion" class="form__input"><br><br>
+                <input placeholder="Posicion" required autocomplete="off" type="text" name="posicion" id="posicion" class="form__input"><br><br>
             </div>
             <div class="form__group">
                 <label for="nac" class="form__label">Nacimiento:</label>
