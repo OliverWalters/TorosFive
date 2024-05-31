@@ -60,23 +60,45 @@ $jugadores = $query->getResult();
                 <div class="tbl__col tbl__col--2">Jugadora</div>
             </li>';*/
 
-if ($jugadores != null) {
-  foreach ($jugadores as $jugador) {
-      $output .= 
-        '<li class="tbl__row">
-            <div class="tbl__col tbl__col--1">
-                <div class="checkbox-wrapper-59">
-                    <label class="switch">
-                        <input type="checkbox" name="opciones[]" value="'.$jugador->getDnijugador().':'.$_GET["team"].'">
-                        <span class="slider"></span>
-                    </label>
+if ($equipo == "") {
+    if ($jugadores != null) {
+      foreach ($jugadores as $jugador) {
+          $output .= 
+            '<li class="tbl__row">
+                <div class="tbl__col tbl__col--1">
+                    <div class="checkbox-wrapper-59">
+                        <label class="switch">
+                            <input type="checkbox" name="opciones[]" value="'.$jugador->getDnijugador().':'.$_GET["team"].'">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="tbl__col tbl__col--2">' . $jugador->getNombre() . '</div>
-        </li>';
-      
-  }
-} else {
-  $output .= '<h2 class="noData">No se han encontrado datos</h2>';
+                <div class="tbl__col tbl__col--2">' . $jugador->getNombre() . '</div>
+            </li>';
+
+      }
+    } else {
+      $output .= '<h2 class="noData">No se han encontrado datos</h2>';
+    }
+}else{
+    if ($jugadores != null) {
+      foreach ($jugadores as $jugador) {
+          $output .= 
+            '<li class="tbl__row">
+                <div class="tbl__col tbl__col--1">
+                    <div class="checkbox-wrapper-59">
+                        <label class="switch">
+                            <input class="red" type="checkbox" name="opciones[]" value="'.$jugador->getDnijugador().':'.$_GET["team"].'">
+                            <span class="slider slider--red"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="tbl__col tbl__col--2">' . $jugador->getNombre() . '</div>
+            </li>';
+
+      }
+    } else {
+      $output .= '<h2 class="noData">No se han encontrado datos</h2>';
+    }
 }
 echo $output;

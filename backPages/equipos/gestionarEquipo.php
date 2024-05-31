@@ -56,6 +56,7 @@ try {
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablas/tablaEquiposjugadores.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tabla.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/equiposjugadores.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/checkbox.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="<?php echo ROOT_PATH;?>/backJs/gestionarFilters.js"></script>
 </head>
@@ -75,8 +76,11 @@ try {
                 <h2 class="tbl__title">Equipo<small class="tbl__subtitle"></small></h2>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=0" method="post">
                     <div class="tbl__inputs">
-                        <input type="text" placeholder="Nombre de jugadora" onklaceholder="Nombre de jugadora"eyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
-                        <input type="submit" value="Eliminar">
+                        <input class="tbl__input" type="text" placeholder="Nombre de jugadora" onkeyup="listarEquipo(<?php echo $team; ?>)" id="nombreJugEq" autocomplete="new-password">
+                        <div class="tbl__input-container">
+                            <i class="fa-solid fa-user-minus icon"></i>
+                            <input class="tbl__input--rm tbl__input--btns" type="submit" value="Eliminar del equipo">
+                        </div>
                     </div>
                     <li class="tbl__header">
                         <div class="tbl__col tbl__col--1">Elegir</div>
@@ -92,8 +96,11 @@ try {
                 <h2 class="tbl__title">Jugadoras<small class="tbl__subtitle"></small></h2>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $team; ?>&add=1" method="post">
                     <div class="tbl__inputs">
-                        <input type="text" placeholder="Nombre de jugadora" onkeyup="listarJugadores(<?php echo $team; ?>)" id="nombreJug" autocomplete="new-password">
-                        <input type="submit" value="Añadir">
+                        <input class="tbl__input" type="text" placeholder="Nombre de jugadora" onkeyup="listarJugadores(<?php echo $team; ?>)" id="nombreJug" autocomplete="new-password">
+                        <div class="tbl__input-container">
+                            <i class="fa-solid fa-user-plus icon"></i>
+                            <input class="tbl__input--add tbl__input--btns" type="submit" value="Añadir a equipo">
+                        </div>
                     </div>
                     <li class="tbl__header">
                         <div class="tbl__col tbl__col--1">Elegir</div>

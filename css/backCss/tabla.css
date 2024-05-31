@@ -85,6 +85,10 @@ h2 small {
     width: 200px; 
     margin-bottom: 10px;
 } 
+.tbl__form__input:focus {
+    outline: 2px solid #4D90FE; /* Borde azul claro */
+    outline-offset: 2px; /* Separación del borde del botón */
+}
 .tbl__btn{
     padding: 8px;
     border: 1px solid #ccc;

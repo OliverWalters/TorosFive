@@ -55,3 +55,15 @@
     Author     : Oliver
 */
 
+
+
+
+.checkbox-wrapper-59 .red:checked + .slider--red:before {
+    transform: translateX(15px);
+    background-color: red;
+}
+
+.checkbox-wrapper-59 .red:checked + .slider--red {
+    box-shadow: 0 0 0 2px red, 0 0 8px red;
+}
+

@@ -18,7 +18,7 @@ function listarJugadores(num) {
 function listarEquipo(num) {
     var nombre = $('#nombreJugEq').val();
     var equipo = num;
-
+    
     $.ajax({
         type: "POST",
         url: `../../backAjax/gestionSubmit.php?team=${num}`,
