@@ -92,6 +92,9 @@ body {
     .form__group {
         width: 100%;
     }
+    .form__submit {
+        flex-basis: 100%;
+    }
 }/*
         .file-input-container {
             position: relative;
