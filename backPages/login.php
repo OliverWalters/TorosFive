@@ -1,7 +1,11 @@
 <?php
+if(!defined("ROOT")){
+    include '../config.php';
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once "../bootstrap.php";
-    require_once '../src/Entity/Entrenador.php';
+    
+    require_once ROOT."/bootstrap.php";
+    require_once ROOT.'/src/Entity/Entrenador.php';
     $usuario = $_POST["usuario"];
     $clave = $_POST["clave"];
     $correcto = false;
@@ -20,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         header("location:listaGestion.php");
     } else {
-        echo "<p class='alert'>Usuario o clave incorrecta!!<p>";
+        echo "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
     }
 }
 ?>
@@ -37,6 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <?php
+        include ROOT."/backPages/notificacion.php";
+    ?>
     <div class="background"></div>
         <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <div class="form__img"><i class="fa-solid fa-user-secret"></i></div>
@@ -50,8 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <input class="form__input form__input--submit" class="submit" type='submit' value="Iniciar Sesión">
         </form>
-    
-    <!-- OJO de PASSWORD -->
 </body>
 
 </html>

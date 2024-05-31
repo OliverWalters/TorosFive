@@ -64,11 +64,12 @@ try {
 <body class="body--margin">
     <?php
     include '../gestionHeader.php';
-    if (isset($_GET["err"])) {
-        if ($_GET["err"] == "1") {
-            print "<div class='error'><h3>HA HABIDO UN ERROR AL BORRAR</h3><p>Inténtelo de nuevo</p><br><br></div>";
-        }
-    }
+    include '../notificacion.php';
+            if(isset($_GET["err"])){
+                if($_GET["err"] == "1"){
+                    print "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
+                }
+            }
     ?>
     <div class="box">
         <div class="box__item">
