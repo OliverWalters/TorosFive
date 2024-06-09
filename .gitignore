@@ -82,5 +82,5 @@
 /node_modules/
 
 
-/config.php
-/bootstrap.php
+config.php
+bootstrap.php
