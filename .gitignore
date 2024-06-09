@@ -80,3 +80,7 @@
 /build/
 
 /node_modules/
+
+
+/config.php
+/bootstrap.php
