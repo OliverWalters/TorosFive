@@ -20,19 +20,27 @@ use PHPMailer\PHPMailer\Exception;
     
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER; //
+        /*$mail->SMTPDebug = SMTP::DEBUG_SERVER; //
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Port = 587;
         $mail->Username = 'oliver22official@gmail.com';
         $mail->Password = 'ilew ktix flnp bjeh';
+        $mail->SMTPSecure = 'tls';*/
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER; //
+        $mail->isSMTP();
+        $mail->Host = 'smtp.ionos.es';
+        $mail->SMTPAuth = true;
+        $mail->Port = 587;
+        $mail->Username = 'info@torosfive.es';
+        $mail->Password = 'verOli2504';
         $mail->SMTPSecure = 'tls';
 
 
         //Recipients
-        $mail->setFrom($email, $nombre);
-        $mail->addAddress('olirexminecraft@gmail.com', 'Oliver');        //Name is optional
+        $mail->setFrom("info@torosfive.es", "Toros Five volley Ojen");
+        $mail->addAddress('olirexminecraft@gmail.com', 'Oliver');        //A quien enviar
 
         /*
         //Attachments
