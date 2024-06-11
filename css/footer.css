@@ -1,0 +1,61 @@
+ @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+a{
+    all: unset;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+a:hover{
+    text-shadow: 0 0 10px fuchsia;
+    transition: ease-in-out 0.2s;
+}
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+}
+.footer__item{
+    margin: 0;
+    padding: 0;
+    flex-basis: 20%;
+}
+.footer__item--collapse{
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer__item--redes{
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 23px;
+    justify-content: space-around;
+}
+
+@media (max-width: 900px){
+    .footer__item--collapse{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer__item--redes{
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* 
+    Created on : 11 jun 2024, 19:23:57
+    Author     : Oliver
+*/
+
