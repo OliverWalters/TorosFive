@@ -26,7 +26,8 @@
         // Obtener todos los eventos y cumples
         $eventos = $entityManager->getRepository('Evento')->findAll();
         $jugadoras = $entityManager->getRepository('Jugador')->findAll();
-        $fechas = array(
+        $fechas = [];
+        $fechas = [
             array(
                 "nombre" => "Dia de la Mujer",
                 "fecha" => "2001-03-07",
@@ -38,7 +39,7 @@
                 "fecha" => "2001-06-11",
                 "descripcion" => "Hoy empieza la feria de marbella",
                 "imagen" => "../images/jugadores/pista.jpg"
-            ));
+            )];
         foreach($eventos as $evento){
             array_push($fechas, array(
                 "nombre" => $evento->getNombre(),
@@ -140,23 +141,20 @@
     <div id='calendario' class="calendario"></div>
     <script>
     //npm install fullcalendar
-    <?php
-    
-    
-    ?>
-
 
     document.addEventListener('DOMContentLoaded', function() {
         var eventos = [
-            <?php foreach ($fechas as $fecha): ?>
-            {
-                title: '<?php echo $fecha["nombre"]; ?>',
-                rrule: {
-                    freq: 'yearly',
-                    dtstart: '<?php echo $fecha["fecha"]; ?>'
-                }
-            },
-            <?php endforeach; ?>
+            <?php foreach ($fechas as $fecha){
+                ?>
+                {
+                    title: '<?php echo $fecha["nombre"]; ?>',
+                    rrule: {
+                        freq: 'yearly',
+                        dtstart: '<?php echo $fecha["fecha"]; ?>'
+                    }
+                },
+                <?php
+            }?>
         ];
         var calendarEl = document.getElementById('calendario');
 
