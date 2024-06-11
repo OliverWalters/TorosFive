@@ -4,19 +4,22 @@ a{
     cursor: pointer;
     transition: ease-in-out 0.2s;
 }
-a:hover{
+.footer{
+    a:hover{
     text-shadow: 0 0 10px fuchsia;
     transition: ease-in-out 0.2s;
 }
+}
+
 .footer {
     position: relative;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #333;
+    background-color: #111;
     color: white;
     text-align: center;
-    padding: 50px 30px;
+    padding: 40px 30px;
     display: flex;
     flex-direction: row;
     align-items: center;

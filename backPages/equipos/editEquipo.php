@@ -10,7 +10,7 @@ if(!defined("ROOT")){
 $equipos = $entityManager->getRepository('Equipo')->findAll();
 $entrenadores = $entityManager->getRepository('Entrenador')->findAll();
 $result;
-$equipoResult = "";
+$img = "";
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $result = $entityManager->getRepository('Equipo')->find($_GET["team"]);
     
@@ -49,6 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result->setCategoria($_POST["categoria"]);
         $entrenador = $entityManager->getRepository('Entrenador')->find($_POST["entrenador"]);
         $result->setDnientrenador($entrenador);
+        $entityManager->persist($result);
+        $entityManager->flush();
 
         header("location:equipos.php?err=0");
     } catch (PDOException $e) {
@@ -76,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../gestionHeader.php';
     include ROOT.'/backPages/goBack.php';
     ?>
-    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $_GET["team"]; ?>" method="post">
+    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?team=" . $_GET["team"]; ?>" method="post" enctype="multipart/form-data">
         <div class="form__title">Editar equipo</div>
         <div class="form__group">
             <label for="nombre" class="form__label">Nombre:</label>

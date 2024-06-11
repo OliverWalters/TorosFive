@@ -6,8 +6,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="../js/equiposFilters.js"></script>
+    <link rel="stylesheet" href="../css/equipos.css"/>
 </head>
 
 <body class="body--margin">
@@ -18,46 +17,29 @@
     require_once '../src/Entity/Entrenador.php';
     $equipos = $entityManager->getRepository('Equipo')->findAll();
     ?>
-    <form id="form">
-        Nombre:
-        <input autocomplete="off" type="text" name="nombre" id="nombre"><br><br>
-        Categoria:
-        <select type="text" name="categoria" id="categoria">
-            <option value=""></option>
-            <?php
-            foreach ($equipos as $equipo) {
-            ?>
-                <option value="<?php echo $equipo->getCategoria(); ?>"><?php echo $equipo->getCategoria(); ?></option>
-            <?php
-            }
-            ?>
-        </select>
-        <br><br>
-        Entrenador:
-        <select type="text" name="entrenador" id="entrenador">
-            <option value=""></option>
-            <?php
-            foreach ($equipos as $equipo) {
-                $entrenador = $entityManager->getRepository('Entrenador')->find($equipo->getDnientrenador());
-            ?>
-                <option value="<?php echo $entrenador->getDnientrenador(); ?>"><?php echo $entrenador->getNombre(); ?></option>
-            <?php
-            }
-            ?>
-        </select><br><br>
-        <input type="submit" value="Filtrar">
-
-    </form><button id="reset" onclick="reset()">Reset</button>
-    <table id="table">
-        <thead>
-            <tr>
-                <td>Nombre</td>
-                <td>Categoria</td>
-                <td>Entrenador</td>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="equipos">
+    <?php
+    foreach($equipos as $equipo){
+        $numero_random = rand(1, 4);
+        ?>
+        <div class="equipo">
+            <div class="equipo__fondo">
+                <img src="../images/background/equipos/<?php echo $numero_random.".png"; ?>">
+            </div>
+            <img class="equipo__foto" src="<?php echo $equipo->getImagen(); ?>" alt="alt"/>
+            <div class="equipo__info">
+                <h1 class="equipo__info__titulo"><?php echo $equipo->getNombre(); ?></h1>
+                <p class="equipo__info__txt"><?php echo $equipo->getCategoria(); ?></p>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    </div>
 </body>
+
+<?php
+    include './footer.html';
+?>
 
 </html>

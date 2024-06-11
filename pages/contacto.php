@@ -56,6 +56,9 @@
             </div>
         </div>
     </div>
-
+    <div style="height: 95vh;"></div>
+<?php
+    include './footer.html';
+?>
 </body>
 </html>

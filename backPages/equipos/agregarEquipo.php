@@ -7,8 +7,7 @@ if(!defined("ROOT")){
     require_once ROOT.'/src/Entity/Equipo.php';
     require_once ROOT.'/src/Entity/Entrenador.php';
 $entrenadores = $entityManager->getRepository('Entrenador')->findAll();
-$result;
-
+$img = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -37,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nuevo = new Equipo();
         $nuevo->setNombre($_POST["nombre"]);
         if($_POST["imgChange"]){
-            $result->setImagen($img);
+            $nuevo->setImagen($img);
         }
         $nuevo->setCategoria($_POST["categoria"]);
         $entrenador = $entityManager->getRepository('Entrenador')->find($_POST["entrenador"]);
@@ -71,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../gestionHeader.php';
     include ROOT.'/backPages/goBack.php';
     ?>
-    <form class="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+    <form class="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
         <div class="form__title">Añadir equipo</div>
         <div class="form__group">
             <label for="nombre" class="form__label">Nombre:</label>
