@@ -39,8 +39,8 @@ use PHPMailer\PHPMailer\Exception;
 
 
         //Recipients
-        $mail->setFrom("info@torosfive.es", "Toros Five volley Ojen");
-        $mail->addAddress('olirexminecraft@gmail.com', 'Oliver');        //A quien enviar
+        $mail->setFrom("info@torosfive.es", $nombre);
+        $mail->addAddress('info@torosfive.es', 'Toros Five volley Ojen');        //A quien enviar
 
         /*
         //Attachments
