@@ -20,7 +20,7 @@
     <div class="equipos">
     <?php
     foreach($equipos as $equipo){
-        $numero_random = rand(1, 4);
+        $numero_random = rand(1, 2);
         ?>
         <div class="equipo">
             <div class="equipo__fondo">
