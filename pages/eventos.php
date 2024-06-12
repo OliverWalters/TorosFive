@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/eventos.css"/>
+    <link rel="stylesheet" href="../css/heading.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     
     <!-- fullcalendar -->
@@ -22,7 +23,11 @@
         require_once "../bootstrap.php";
         require_once '../src/Entity/Evento.php';
         require_once '../src/Entity/Jugador.php';
-        
+    ?>
+        <div class="heading">
+            <h1 class="heading__txt">Eventos</h1>
+        </div>
+    <?php
         // Obtener todos los eventos y cumples
         $eventos = $entityManager->getRepository('Evento')->findAll();
         $jugadoras = $entityManager->getRepository('Jugador')->findAll();
@@ -108,9 +113,9 @@
                 ?>" class="evento__img">
         </div>
         <div class="evento__contendor">
-            <h3 class="evento__titulo"><?php echo $eventoHoy["nombre"] ?></h3>
-            <p class="evento__fecha"><?php echo $eventoHoy["fecha"] ?></p>
-            <p class="evento__txt"><?php echo $eventoHoy["descripcion"] ?></p>
+            <h3 class="evento__titulo"><?php echo $eventoHoy["nombre"]; ?></h3>
+            <p class="evento__fecha"><?php echo $eventoHoy["fecha"]; ?></p>
+            <p class="evento__txt"><?php echo $eventoHoy["descripcion"]; ?></p>
         </div>
     </div>
     
@@ -131,9 +136,9 @@
 
                     ?>" class="evento__img">
             <div class="evento__contendor">
-                <h3 class="evento__titulo"><?php echo $eventoMasCercano["nombre"] ?></h3>
-                <p class="evento__fecha"><?php echo $eventoMasCercano["fecha"] ?></p>
-                <p class="evento__txt"><?php echo $eventoMasCercano["descripcion"] ?></p>
+                <h3 class="evento__titulo"><?php echo $eventoMasCercano["nombre"]; ?></h3>
+                <p class="evento__fecha"><?php echo $eventoMasCercano["fecha"]; ?></p>
+                <p class="evento__txt"><?php echo $eventoMasCercano["descripcion"]; ?></p>
             </div>
         </div>
     </div>

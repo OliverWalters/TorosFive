@@ -10,6 +10,7 @@
     <script src="../node_modules/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/heading.css"/>
 </head>
 
 <body class="body body--margin">
@@ -17,6 +18,9 @@
     include '../header.html';
     require_once "../bootstrap.php";
     ?>
+    <div class="heading">
+        <h1 class="heading__txt">Contacto</h1>
+    </div>
     <div class="container">
         <div class="container__fondo"></div>
         <div class="contacto">

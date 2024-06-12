@@ -1,0 +1,125 @@
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    gap: 70px 10px;
+    justify-items: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    width: 90%;
+    padding: 50px;
+    margin: auto;
+    /*transition: grid-template-columns 0.5s ease;*/
+}
+
+.padre{
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    width: 80%;
+    padding: 50px;
+    border-radius: 30px;
+    border: solid 2px white;
+    margin: auto;
+    gap: 30px;
+    margin-bottom: 70px;
+    align-items: center;
+}
+
+.titulo{
+    text-align: center;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 20px;
+    border:solid 2px white;
+    width: fit-content;
+    background: linear-gradient(to right, fuchsia, #feb47b);
+    backdrop-filter: opacity(20%);
+    box-shadow: 0 0 20px 2px darkgray;
+}
+
+
+.tarjeta {
+    position: relative;
+    display: inline-block;
+    height: 266px;
+    box-shadow: 0 0 20px 0 black;
+    transition: ease-in-out 0.4s;
+    border-radius: 5px;
+
+    .tarjeta__img {
+        width: 200px;
+        height: 266px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .img {
+        position: relative;
+        top: 0;
+        /*50%*/
+        left: 50%;
+        transform: translateX(-50%);
+        /*translate(-50%, -50%)*/
+        width: 200px;
+        transition: ease-in-out 0.4s;
+    }
+
+    .tarjeta__info {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        background-color: #fff !important;
+        border-radius: 3px;
+        border: solid 1px fuchsia;
+        box-shadow: 0 0 5px 0 fuchsia;
+        padding: 10px;
+        transition: ease-in-out 0.4s;
+        opacity: 0.8;
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.tarjeta:hover {
+    z-index: 700;
+    box-shadow: 0 0 20px 1px black;
+    transition: ease-in-out 0.4s;
+    transform: scale(1.05);
+
+    .img {
+        width: 250px;
+        top: -20px;
+        transition: ease-in-out 0.4s;
+    }
+
+    .tarjeta__info {
+        /*bottom: -33px;*/
+        opacity: 1;
+        transition: ease-in-out 0.4s;
+    }
+}
+.tarjeta--entrenador{
+    margin: 20px auto;
+    margin-bottom: 70px;
+}
+
+@media (max-width: 550px) {
+    .container {
+        transform: scale(0.9);
+    }
+}
+/* 
+    Created on : 12 jun 2024, 11:27:58
+    Author     : Oliver
+*/
+

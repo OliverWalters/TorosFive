@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+.proximo {
+    background-color: #505050ce;
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 80%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    min-width: 420px;
+    margin-bottom: 50px;
+}
+
+
+
+.proximo__titulo {
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.noticia {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    min-width: 420px;
+    color: black;
+    text-align: left;
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px 1px #000000dd;
+}
+
+.noticia--proximo {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0;
+}
+
+.noticia__img {
+    max-width: 400px;
+    max-height: 500px; 
+    position: relative;
+    top:-50%;
+    transition: all 0.3s;
+}
+.noticia__img__contenedor{
+    
+    max-height: 300px;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.noticia__contendor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.noticia__titulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+}
+
+.noticia__txt {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.noticia__fecha {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 1000px) {
+    .noticia {
+        flex-direction: column;
+    }
+
+    .noticia__img {
+        width: 80%;
+        margin: auto;
+        min-width: 400px;
+    }
+
+}
+/* 
+    Created on : 12 jun 2024, 13:08:01
+    Author     : Oliver
+*/
+

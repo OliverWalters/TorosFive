@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/equipos.css"/>
+    <link rel="stylesheet" href="../css/heading.css"/>
 </head>
 
 <body class="body--margin">
@@ -17,12 +18,15 @@
     require_once '../src/Entity/Entrenador.php';
     $equipos = $entityManager->getRepository('Equipo')->findAll();
     ?>
+    <div class="heading">
+        <h1 class="heading__txt">Equipos</h1>
+    </div>
     <div class="equipos">
     <?php
     foreach($equipos as $equipo){
         $numero_random = rand(1, 2);
         ?>
-        <div class="equipo">
+        <div class="equipo" onclick="window.location.href = './jugadores.php?team=<?php echo $equipo->getIdequipo(); ?>';">
             <div class="equipo__fondo">
                 <img src="../images/background/equipos/<?php echo $numero_random.".png"; ?>">
             </div>

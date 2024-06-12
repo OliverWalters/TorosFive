@@ -1,0 +1,67 @@
+.heading {
+  background: #333333aa;
+  backdrop-filter: blur(5px);
+  display: flex;
+  color: white;
+  padding: 40px;
+  width: 80%;
+  border-radius: 40px;
+  margin:auto;
+  margin-bottom: 50px;
+}
+.heading:before,
+.heading:after {
+  content: '';
+  margin: auto 1em;
+  border-bottom: solid 3px;
+  flex: 1;
+}
+.heading__txt {
+  position: relative;
+  padding: 0.25em 1.1em;
+  overflow: hidden;
+  background: linear-gradient(currentcolor, currentcolor) no-repeat top center, linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
+  background-size: calc(100% - 1.65em) 1px;
+}
+.heading__txt:before,
+.heading__txt:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: solid 3px;
+  border-top: none;
+  border-bottom: none;
+  transform: skew(45deg)
+}
+.heading__txt:after {
+  transform: skew(-45deg)
+}
+/* 
+    Created on : 12 jun 2024, 14:26:00
+    Author     : Oliver
+*//*
+.heading {
+  background: #333333aa;
+  backdrop-filter: blur(5px);
+  display: flex;
+  color: white;
+  padding: 40px;
+  width: 80%;
+  border-radius: 40px;
+  margin:auto;
+  margin-bottom: 50px;
+}
+.heading:before,
+.heading:after {
+  content: '';
+  margin: auto 1em;
+  border-bottom: solid 3px;
+  flex: 1;
+}
+
+.heading__txt{
+    padding: 10px;
+}*/
