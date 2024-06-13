@@ -17,7 +17,7 @@ class Jugador
      *
      * @ORM\Column(name="dniJugador", type="string", length=50, nullable=false)
      * @ORM\Id
-     * 
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $dnijugador;
 
@@ -49,6 +49,13 @@ class Jugador
      */
     private $nacimiento;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="numero", type="integer", nullable=false)
+     */
+    private $numero;
+
     public function getDnijugador(): string {
         return $this->dnijugador;
     }
@@ -67,6 +74,10 @@ class Jugador
 
     public function getNacimiento(): ?\DateTime {
         return $this->nacimiento;
+    }
+
+    public function getNumero(): int {
+        return $this->numero;
     }
 
     public function setDnijugador(string $dnijugador): void {
@@ -89,5 +100,8 @@ class Jugador
         $this->nacimiento = $nacimiento;
     }
 
+    public function setNumero(int $numero): void {
+        $this->numero = $numero;
+    }
 
 }

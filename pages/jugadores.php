@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/jugadores.css"/>
+    <link rel="stylesheet" href="../css/heading.css"/>
 </head>
 
 <body class="body--margin">
@@ -31,6 +32,9 @@
         ]);
     $jugadores = $query->getResult();
     ?>
+    <div class="heading">
+        <h1 class="heading__txt"><?php echo $equipo->getNombre(); ?></h1>
+    </div>
     <div class="padre">
         <h1 class="titulo titulo--entrenador">Entrenador</h1>
         <div class="tarjeta tarjeta--entrenador">
