@@ -9,6 +9,7 @@ function filterData(num) {
     var nombre = $('#nombre').val();
     var equipo = $('#equipo').val();
     var posicion = $('#posicion').val();
+    var fecha = $('#fecha').val();
 
     $.ajax({
         type: "POST",
@@ -16,7 +17,8 @@ function filterData(num) {
         data: {
             nombre: nombre,
             equipo: equipo,
-            posicion: posicion
+            posicion: posicion,
+            fecha: fecha
         },
         success: function (response) {
             $('#table').html(response);

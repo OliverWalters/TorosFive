@@ -11,6 +11,7 @@ require_once ROOT.'/src/Entity/Equipojugador.php';
 $nombre = "";
 $equipo = "";
 $posicion = "";
+$fecha = "";
 $output = "";
 
 if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
@@ -24,6 +25,10 @@ if (isset($_POST['posicion']) && !empty($_POST['posicion'])) {
   $posicion = $_POST['posicion'];
 }
 
+if (isset($_POST['fecha']) && !empty($_POST['fecha'])) {
+  $fecha = $_POST['fecha'];
+}
+/*
 if ($equipo == "") {
   $query = $entityManager->createQuery(
     'SELECT j 
@@ -48,15 +53,41 @@ if ($equipo == "") {
     'idequipo' =>  $equipo
   ]);
 }
+*/
 
+
+$dql = 'SELECT j 
+         FROM Jugador j
+         JOIN Equipojugador ej WITH j.dnijugador = ej.dnijugador
+         WHERE j.nombre LIKE :nombre 
+         AND j.posicion LIKE :posicion';
+$params = ['nombre' => '%' . $nombre . '%',
+    'posicion' => '%' . $posicion . '%'];
+
+if ($equipo != "") {
+    $dql .= ' AND ej.idequipo = :idequipo';
+    $params['idequipo'] = $equipo ;
+}
+
+if ($fecha != "") {
+    $dql .= ' AND j.nacimiento LIKE :fecha';
+    $params['fecha'] = '%' . $fecha . '%';
+}
+
+$query = $entityManager->createQuery($dql)->setParameters($params);
+
+// Ejecutar la consulta
+$eventos = $query->getResult();
 
 
 $jugadores = $query->getResult();
 $output .= '<li class="tbl__header">
             <div class="tbl__col tbl__col--1">Nombre</div>
             <div class="tbl__col tbl__col--2">Posición</div>
-            <div class="tbl__col tbl__col--3">Editar</div>
-            <div class="tbl__col tbl__col--4">Eliminar</div>
+            <div class="tbl__col tbl__col--3">Nacimiento</div>
+            <div class="tbl__col tbl__col--4">Numero</div>
+            <div class="tbl__col tbl__col--5">Editar</div>
+            <div class="tbl__col tbl__col--6">Eliminar</div>
         </li>';
 
 if ($jugadores != null) {
@@ -65,8 +96,10 @@ if ($jugadores != null) {
         '<li class="tbl__row">
             <div class="tbl__col tbl__col--1" data-label="Nombre">' . $jugador->getNombre() . '</div>
             <div class="tbl__col tbl__col--2" data-label="Posición">' . $jugador->getPosicion() . '</div>
-            <div class="tbl__col tbl__col--3" data-label="Editar"><a href=\'editJugador.php?jug=' . $jugador->getDnijugador() . '\'><i class="fa-solid fa-pen-to-square"></i></a></div>
-            <div class="tbl__col tbl__col--4" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarJugador.php?jug=' . $jugador->getDnijugador() . '\')"><i class="fa-solid fa-trash""></i></button></div>
+            <div class="tbl__col tbl__col--3" data-label="Nacimiento">' . $jugador->getNacimiento()->format("d-m-Y") . '</div>
+            <div class="tbl__col tbl__col--4" data-label="Numero">' . $jugador->getNumero() . '</div>
+            <div class="tbl__col tbl__col--5" data-label="Editar"><a href=\'editJugador.php?jug=' . $jugador->getDnijugador() . '\'><i class="fa-solid fa-pen-to-square"></i></a></div>
+            <div class="tbl__col tbl__col--6" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarJugador.php?jug=' . $jugador->getDnijugador() . '\')"><i class="fa-solid fa-trash""></i></button></div>
         </li>';
   }
 } else {

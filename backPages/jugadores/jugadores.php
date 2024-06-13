@@ -21,8 +21,8 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
-        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablas/tablaJugadores.css">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tabla.css">
+        <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablas/tablaJugadores.css">
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script src="<?php echo ROOT_PATH;?>/backJs/jugadoresFilters.js"></script>
     </head>
@@ -77,6 +77,9 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
       <div class="tbl__form__group">
         <input placeholder="Posición" autocomplete="off" type="text" name="posicion" id="posicion" onkeyup="filterData()" class="tbl__form__input">
       </div>
+        <div class="tbl__form__group">
+            <input placeholder="Fecha" name="fecha" type="text" id="fecha" onkeyup="filterData()" class="tbl__form__input">
+        </div>
     </form>
     <button id="reset" onclick="reset()" class="tbl__btn--reset tbl__btn"><i class="fa-solid fa-arrows-rotate"></i> Reset</button>
     <button class="tbl__btn--add tbl__btn" onclick="window.location.href='agregarJugador.php';"><i class="fa-solid fa-user-plus" style="margin-right:5px;"></i>  Añadir</button>

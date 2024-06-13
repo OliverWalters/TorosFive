@@ -84,6 +84,7 @@ h2 small {
     border-radius: 5px;
     width: 200px; 
     margin-bottom: 10px;
+    box-sizing: border-box;
 } 
 .tbl__form__input:focus {
     outline: 2px solid #4D90FE; /* Borde azul claro */
