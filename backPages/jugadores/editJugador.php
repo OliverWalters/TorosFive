@@ -46,6 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         $result->setNombre($_POST["nombre"]);
         $result->setPosicion($_POST["posicion"]);
+        $result->setNumero($_POST["numero"]);
         $result->setNacimiento(new DateTime($_POST["nac"]));
         $entityManager->persist($result);
         $entityManager->flush();
@@ -90,8 +91,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input required autocomplete="off" type="text" name="posicion" id="posicion" class="form__input" value="<?php echo $result->getPosicion();?>"><br><br>
             </div>
             <div class="form__group">
+                <label for="numero" class="form__label">Número:</label>
+                <input required autocomplete="off" type="text" name="numero" id="numero" class="form__input" value="<?php echo $result->getNumero();?>"><br><br>
+            </div>
+            <div class="form__group">
                 <label for="nac" class="form__label">Nacimiento:</label>
                 <input required autocomplete="off" type="date" name="nac" id="nac" class="form__input" value="<?php echo $result->getNacimiento()->format('Y-m-d');?>"><br><br>
+            </div>
+            <div class="form__group">
             </div>
             <div class="form__group">
                 <label class="form__label">Cambiar imagen:</label>

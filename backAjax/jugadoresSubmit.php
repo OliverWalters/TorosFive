@@ -58,15 +58,23 @@ if ($equipo == "") {
 
 $dql = 'SELECT j 
          FROM Jugador j
+         WHERE j.nombre LIKE :nombre 
+         AND j.posicion LIKE :posicion';
+    $params = ['nombre' => '%' . $nombre . '%',
+        'posicion' => '%' . $posicion . '%'];
+
+if ($equipo != "") {
+    $dql = 'SELECT j 
+         FROM Jugador j
          JOIN Equipojugador ej WITH j.dnijugador = ej.dnijugador
          WHERE j.nombre LIKE :nombre 
          AND j.posicion LIKE :posicion';
-$params = ['nombre' => '%' . $nombre . '%',
-    'posicion' => '%' . $posicion . '%'];
-
-if ($equipo != "") {
+    $params = ['nombre' => '%' . $nombre . '%',
+        'posicion' => '%' . $posicion . '%'];
     $dql .= ' AND ej.idequipo = :idequipo';
     $params['idequipo'] = $equipo ;
+}else{
+    
 }
 
 if ($fecha != "") {
@@ -85,7 +93,7 @@ $output .= '<li class="tbl__header">
             <div class="tbl__col tbl__col--1">Nombre</div>
             <div class="tbl__col tbl__col--2">Posición</div>
             <div class="tbl__col tbl__col--3">Nacimiento</div>
-            <div class="tbl__col tbl__col--4">Numero</div>
+            <div class="tbl__col tbl__col--4">Número</div>
             <div class="tbl__col tbl__col--5">Editar</div>
             <div class="tbl__col tbl__col--6">Eliminar</div>
         </li>';
@@ -97,7 +105,7 @@ if ($jugadores != null) {
             <div class="tbl__col tbl__col--1" data-label="Nombre">' . $jugador->getNombre() . '</div>
             <div class="tbl__col tbl__col--2" data-label="Posición">' . $jugador->getPosicion() . '</div>
             <div class="tbl__col tbl__col--3" data-label="Nacimiento">' . $jugador->getNacimiento()->format("d-m-Y") . '</div>
-            <div class="tbl__col tbl__col--4" data-label="Numero">' . $jugador->getNumero() . '</div>
+            <div class="tbl__col tbl__col--4" data-label="Número">' . $jugador->getNumero() . '</div>
             <div class="tbl__col tbl__col--5" data-label="Editar"><a href=\'editJugador.php?jug=' . $jugador->getDnijugador() . '\'><i class="fa-solid fa-pen-to-square"></i></a></div>
             <div class="tbl__col tbl__col--6" data-label="Eliminar"><button class="deleteBtn" onclick="mensajeConfirmar(\'borrarJugador.php?jug=' . $jugador->getDnijugador() . '\')"><i class="fa-solid fa-trash""></i></button></div>
         </li>';

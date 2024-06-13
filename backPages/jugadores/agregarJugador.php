@@ -42,6 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         $nuevo->setNombre($_POST["nombre"]);
         $nuevo->setPosicion($_POST["posicion"]);
+        $nuevo->setNumero($_POST["numero"]);
         $nuevo->setNacimiento(new DateTime($_POST["nac"]));
         $entityManager->persist($nuevo);
         $entityManager->flush();
@@ -85,8 +86,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input placeholder="Posicion" required autocomplete="off" type="text" name="posicion" id="posicion" class="form__input"><br><br>
             </div>
             <div class="form__group">
+                <label for="numero" class="form__label">Número:</label>
+                <input placeholder="Número de jugador" required autocomplete="off" type="text" name="numero" id="numero" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
                 <label for="nac" class="form__label">Nacimiento:</label>
                 <input required autocomplete="off" type="date" name="nac" id="nac" class="form__input"><br><br>
+            </div>
+            <div class="form__group">
             </div>
             <div class="form__group">
                 <label class="form__label">Cambiar imagen:</label>

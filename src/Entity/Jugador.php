@@ -17,7 +17,6 @@ class Jugador
      *
      * @ORM\Column(name="dniJugador", type="string", length=50, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $dnijugador;
 
