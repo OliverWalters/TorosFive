@@ -37,7 +37,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $nuevo->setDnientrenador($_POST["dni"]);
         if($_POST["imgChange"]){
             $nuevo->setImagen($img);
-        }
+        }else{
+            $nuevo->setImagen(ROOT_PATH.'/images/jugDef.png');
+        } 
         $nuevo->setNombre($_POST["nombre"]);
         $nuevo->setUsuario($_POST["usuario"]);
         $nuevo->setClave($_POST["clave"]); 

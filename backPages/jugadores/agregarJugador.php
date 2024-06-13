@@ -40,6 +40,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($_POST["imgChange"]){
             $nuevo->setImagen($img);
         }
+        else{
+            $nuevo->setImagen(ROOT_PATH.'/images/jugDef.png');
+        } 
         $nuevo->setNombre($_POST["nombre"]);
         $nuevo->setPosicion($_POST["posicion"]);
         $nuevo->setNumero($_POST["numero"]);

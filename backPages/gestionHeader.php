@@ -32,7 +32,13 @@ $entrenador = $entityManager->find("Entrenador", $_SESSION["usuario"]);
             </div>
             <div class="user">
                 <button class="user__button" onclick="window.location.href='<?php echo ROOT_PATH.'/backPages/cerrarSesion.php';?>'">
-                    <img src="<?php echo $entrenador->getImagen();?>" alt="User" class="user__button__image">
+                    <img src="<?php 
+                        if($entrenador->getImagen() != null){
+                            echo $entrenador->getImagen();
+                        }else{
+                            echo ROOT_PATH.'/images/jugDef.png';
+                        }
+                        ?>" alt="User" class="user__button__image">
                     <h5 class="user__button__txt">Cerrar sessión</h5>
                 </button>
             </div>

@@ -34,19 +34,15 @@
         $fechas = [];
         $fechas = [
             array(
-                "nombre" => "Dia de la Mujer",
-                "fecha" => "2001-03-07",
-                "descripcion" => "Hoy es el dia internacional de la mujer",
-                "imagen" => null
-            ),
-            array(
-                "nombre" => "Feria de Marbella",
+                "cal" => "Inicio de temporada",
+                "nombre" => "Inicio de temporada",
                 "fecha" => "2001-06-11",
                 "descripcion" => "Hoy empieza la feria de marbella",
                 "imagen" => "../images/jugadores/pista.jpg"
             )];
         foreach($eventos as $evento){
             array_push($fechas, array(
+                "cal" => $evento->getNombre(),
                 "nombre" => $evento->getNombre(),
                 "fecha" => $evento->getFecha()->format('Y-m-d'),
                 "descripcion" => $evento->getDescripcion(),
@@ -54,10 +50,18 @@
             ));
         }
         foreach($jugadoras as $jugadora){
+            $cadena = trim($jugadora->getNombre());
+
+            // 2. Dividir la cadena en palabras usando el espacio como delimitador
+            $palabras = explode(' ', $cadena);
+
+            // 3. Obtener la primera palabra
+            $nombre = reset($palabras);
             array_push($fechas, array(
-                "nombre" => "Cumple de ".$jugadora->getNombre(),
+                "cal" => "Cumple ".$nombre,
+                "nombre" => "Cumpleaños de ".$jugadora->getNombre(),
                 "fecha" => $jugadora->getNacimiento()->format('Y-m-d'),
-                "descripcion" => "Hoy es el cumple de ".$jugadora->getNombre()."!! FELICIDADES!!",
+                "descripcion" => "Hoy es el cumple de ".$nombre."!! FELICIDADES!!",
                 "imagen" => $jugadora->getImagen()
             ));
         }
@@ -152,7 +156,7 @@
             <?php foreach ($fechas as $fecha){
                 ?>
                 {
-                    title: '<?php echo $fecha["nombre"]; ?>',
+                    title: '<?php echo $fecha["cal"]; ?>',
                     rrule: {
                         freq: 'yearly',
                         dtstart: '<?php echo $fecha["fecha"]; ?>'

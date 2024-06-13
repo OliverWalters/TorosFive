@@ -12,6 +12,9 @@
 
 <body class="body--margin">
     <?php
+    if(!defined("ROOT")){
+        include '../config.php';
+    }
     include '../header.html';
     require_once "../bootstrap.php";
     require_once '../src/Entity/Equipo.php';
@@ -37,35 +40,39 @@
     </div>
     <div class="padre">
         <h1 class="titulo titulo--entrenador">Entrenador</h1>
-        <div class="tarjeta tarjeta--entrenador">
-            <div class="tarjeta__img">
-                <img class="img" src="<?php if($entrenador->getImagen()!= null){echo $entrenador->getImagen();}else{ echo "https://via.placeholder.com/768x1024/eee?text=4:3";} ?>">
-            </div>
-            <div class="tarjeta__info">
-                <h3><?php echo $entrenador->getNombre(); ?></h3>
-                <p><b><?php echo $equipo->getNombre(); ?></b></p>
-                <p><?php echo $entrenador->getNacimiento()->format("d-m-Y"); ?></p>
+        <div class="tarjeta__padre">
+            <div class="tarjeta tarjeta--entrenador">
+                <div class="tarjeta__img">
+                    <img class="img" src="<?php if($entrenador->getImagen()!= null){echo $entrenador->getImagen();}else{ echo ROOT_PATH."/images/jugDef.png";} ?>">
+                </div>
+                <div class="tarjeta__info">
+                    <h3><?php echo $entrenador->getNombre(); ?></h3>
+                    <p><?php echo $equipo->getNombre(); ?></p>
+                    <p><?php echo $entrenador->getNacimiento()->format("d-m-Y"); ?></p>
+                </div>
             </div>
         </div>
-
+        
         <h1 class="titulo">Jugadores</h1>
         <div class="contenedor">
         <?php
         foreach($jugadores as $jugador){
-            $imagen = "https://via.placeholder.com/768x1024/eee?text=4:3";
+            $imagen = ROOT_PATH."/images/jugDef.png";
             if($jugador->getImagen() != null){
                 $imagen = $jugador->getImagen();
             }
             ?>
-            <div class="tarjeta">
-                <div class="tarjeta__img">
-                <img class="img" src="<?php echo $imagen; ?>">
-            </div>
-            <div class="tarjeta__info">
-                <h3><?php echo $jugador->getNombre(); ?></h3>
-                <p><b><?php echo $jugador->getPosicion(); ?></b></p>
-                <p><?php echo $jugador->getNacimiento()->format("d-m-Y"); ?></p>
-            </div>
+            <div class="tarjeta__padre">
+                <div class="tarjeta">
+                    <div class="tarjeta__img">
+                    <img class="img" src="<?php echo $imagen; ?>">
+                    </div>
+                    <div class="tarjeta__info">
+                        <h3><?php echo $jugador->getNombre(); ?></h3>
+                        <p><?php echo $jugador->getPosicion(); ?></p>
+                        <p class="tarjeta__info__big"><?php echo $jugador->getNumero(); ?></p>
+                    </div>
+                </div>
             </div>
             <?php
         }
