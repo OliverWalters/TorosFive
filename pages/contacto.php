@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <div style="height: 115vh;"></div>
+    <div class="relleno"></div>
 <?php
     include './footer.html';
 ?>

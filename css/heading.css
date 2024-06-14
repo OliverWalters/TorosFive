@@ -42,7 +42,7 @@
 @media (max-width:900px){
     .heading {
         text-align: center;
-        width: 100%;
+        width: auto;
     }
 }
 /* 
