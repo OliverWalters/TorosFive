@@ -40,8 +40,8 @@
     </div>
     <div class="padre">
         <h1 class="titulo titulo--entrenador">Entrenador</h1>
-        <div class="tarjeta__padre">
-            <div class="tarjeta tarjeta--entrenador">
+        <div class="tarjeta__padre tarjeta--entrenador">
+            <div class="tarjeta">
                 <div class="tarjeta__img">
                     <img class="img" src="<?php if($entrenador->getImagen()!= null){echo $entrenador->getImagen();}else{ echo ROOT_PATH."/images/jugDef.png";} ?>">
                 </div>

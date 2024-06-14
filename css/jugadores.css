@@ -127,6 +127,20 @@
     .container {
         transform: scale(0.9);
     }
+    .padre{
+        width: 100%;
+        padding: 50px 0;
+    }
+    .tarjeta__padre{
+        position: relative;
+        left:43%;
+        transform: translateX(-50%) scale(0.7);
+        margin: 0 auto;
+        height: 500px;
+    }
+    .tarjeta--entrenador {
+        left:50%;
+    }   
 }
 
 /* 

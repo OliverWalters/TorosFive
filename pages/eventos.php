@@ -104,7 +104,7 @@
             foreach($eventosHoy as $eventoHoy){
     ?>
     
-    <div class="evento">
+    <div class="evento evento--hoy">
         <div class="evento__img__contenedor"> 
         <img src="<?php 
                     if($eventoHoy["imagen"]==null){

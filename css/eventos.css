@@ -104,11 +104,22 @@
     .evento {
         flex-direction: column;
     }
-
+    .proximo{
+        position: relative;
+        left:50%;
+        transform: translateX(-50%) scale(0.7);
+    }
+    .evento--hoy{
+        position: relative;
+        left:50%;
+        transform: translateX(-50%) scale(0.7);
+    }
     .evento__img {
         width: 80%;
         margin: auto;
         min-width: 400px;
     }
-
+    .heading {
+        margin-bottom: 0;
+    }
 }
