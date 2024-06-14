@@ -35,6 +35,12 @@
             'idequipo' =>  $idequipo
         ]);
     $jugadores = $query->getResult();
+    
+    // Ordenar el array
+    function ordenarPorNombre($a, $b) {
+        return strcmp($a->getPosicion(), $b->getPosicion());
+    }
+    usort($jugadores, 'ordenarPorNombre');
     ?>
     <div class="heading">
         <h1 class="heading__txt"><?php echo $equipo->getNombre(); ?></h1>
