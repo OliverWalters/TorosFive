@@ -107,7 +107,7 @@
     <div class="evento">
         <div class="evento__img__contenedor"> 
         <img src="<?php 
-                    if($eventoHoy["imagen"]==null || $eventoHoy["imagen"] == ""){
+                    if($eventoHoy["imagen"]==null){
                         echo "https://fikrirasyid.com/wp-content/uploads/2016/10/placeholder-portrait-3-4-56158_1080x675.jpg";
                     }
                     else{
@@ -131,7 +131,7 @@
         <h3 class="proximo__titulo">Proximamente</h3>
         <div class="evento evento--proximo">
             <img src="<?php 
-                    if($eventoMasCercano["imagen"]==null || $eventoHoy["imagen"] == ""){
+                    if($eventoMasCercano["imagen"]==null ){
                     echo "https://fikrirasyid.com/wp-content/uploads/2016/10/placeholder-portrait-3-4-56158_1080x675.jpg";
                     }
                     else{
