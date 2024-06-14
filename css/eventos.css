@@ -100,7 +100,7 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
     .evento {
         flex-direction: column;
     }
