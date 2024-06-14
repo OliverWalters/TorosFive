@@ -23,7 +23,7 @@
         $noticias = $entityManager->getRepository('Noticia')->findAll();
         
         function ordenarFecha($a, $b) {
-            return strtotime($a->getFecha()->format('Y-m-d')) + strtotime($b->getFecha()->format('Y-m-d'));
+            return strtotime($b->getFecha()->format('Y-m-d')) - strtotime($a->getFecha()->format('Y-m-d'));
         }
         // Ordenar el array usando usort, seegun establecido en mi funcion 
         usort($noticias, 'ordenarFecha');
