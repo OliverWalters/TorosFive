@@ -66,7 +66,6 @@ try {
     <?php
     include '../gestionHeader.php';
     include '../notificacion.php';
-    include '../goBack.php';
             if(isset($_GET["err"])){
                 if($_GET["err"] == "1"){
                     print "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
