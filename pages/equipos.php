@@ -24,11 +24,17 @@
     <div class="equipos">
     <?php
     foreach($equipos as $equipo){
-        $numero_random = rand(1, 2);
+        $nombre = strtolower($equipo->getNombre());
+        $img;
+        if(stripos($nombre, "playa") == true){
+            $img = "fondoPlaya.png";
+        }else{
+            $img = "fondoPista.png";
+        }
         ?>
         <div class="equipo" onclick="window.location.href = './jugadores.php?team=<?php echo $equipo->getIdequipo(); ?>';">
             <div class="equipo__fondo">
-                <img src="../images/background/equipos/<?php echo $numero_random.".png"; ?>">
+                <img src="<?php echo ROOT_PATH; ?>/images/background/equipos/<?php echo $img; ?>">
             </div>
             <img class="equipo__foto" src="<?php echo $equipo->getImagen(); ?>" alt="alt"/>
             <div class="equipo__info">
