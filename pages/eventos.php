@@ -33,7 +33,7 @@
         $eventos = $entityManager->getRepository('Evento')->findAll();
         $jugadoras = $entityManager->getRepository('Jugador')->findAll();
         $fechas = [];
-        $fechas = [
+        $fechas = [//evento de prueba para poner fecha de presentación
             array(
                 "cal" => "Inicio de temporada",
                 "nombre" => "Inicio de temporada",
