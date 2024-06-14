@@ -61,7 +61,7 @@
                 "cal" => "Cumple ".$nombre,
                 "nombre" => "Cumpleaños de ".$jugadora->getNombre(),
                 "fecha" => $jugadora->getNacimiento()->format('Y-m-d'),
-                "descripcion" => "Es el cumple de ".$nombre."!! FELICIDADES!!",
+                "descripcion" => "Hoy es el cumple de ".$nombre."!! FELICIDADES!!",
                 "imagen" => $jugadora->getImagen()
             ));
         }
@@ -142,7 +142,6 @@
             <div class="evento__contendor">
                 <h3 class="evento__titulo"><?php echo $eventoMasCercano["nombre"]; ?></h3>
                 <p class="evento__fecha"><?php echo $eventoMasCercano["fecha"]; ?></p>
-                <p class="evento__txt"><?php echo $eventoMasCercano["descripcion"]; ?></p>
             </div>
         </div>
     </div>
