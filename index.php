@@ -13,6 +13,17 @@
 </head>
 
 <body>
+    <?php
+        if(!defined("ROOT")){
+            include './config.php';
+        }
+        include ROOT.'/backPages/notificacion.php';
+        if(isset($_GET["err"])){
+            if($_GET["err"] == "1"){
+                print "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
+            }
+        }
+    ?>
     <header id="header" class="header header2">
         <ul class="header__menu">
             <li class="header__menu__item"><a href="./pages/equipos.php">Equipos</a></li>

@@ -55,8 +55,8 @@ use PHPMailer\PHPMailer\Exception;
         $mail->AltBody = 'De: '.$nombre.'\nCorreo: '.$email.'\nTelefono: '.$telefono.'\nMensaje: '.$mensaje;;
 
         $mail->send();
-        header("location:../index.html?err=0");
+        header("location:../index.php?err=0");
     } catch (Exception $e) {
-        header("location:../index.html?err=1");
+        header("location:../index.php?err=1");
         //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
