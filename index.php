@@ -25,6 +25,11 @@
         }
     ?>
     <header id="header" class="header header2">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul class="header__menu">
             <li class="header__menu__item"><a href="./pages/equipos.php">Equipos</a></li>
             <li class="header__menu__item"><a href="./pages/eventos.php">Eventos</a></li>
@@ -34,7 +39,23 @@
             <li class="header__menu__item"><a href="./pages/noticias.php">Noticias</a></li>
             <li class="header__menu__item"><a href="./pages/contacto.php">Contacto</a></li>
         </ul>
+        <ul class="header__menu--hamburger">
+            <li class="header__menu__item"><a href="./pages/equipos.php">Equipos</a></li>
+            <li class="header__menu__item"><a href="./pages/eventos.php">Eventos</a></li>
+            <li class="header__menu__item"><a href="./pages/noticias.php">Noticias</a></li>
+            <li class="header__menu__item"><a href="./pages/contacto.php">Contacto</a></li>
+        </ul>
     </header>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var hamburger = document.querySelector('.hamburger');
+        var header = document.querySelector('.header');
+        
+        hamburger.addEventListener('click', function() {
+            header.classList.toggle('active');
+        });
+    });
+</script>
     <script src="./js/header.js"></script>
     <img class="img" src="./images/background/fondoColor.png">
     <section class="info">

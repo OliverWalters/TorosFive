@@ -2,6 +2,11 @@
 <link rel="stylesheet" href="../css/header.css">
 
 <header id="header" class="header header1">
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <ul class="header__menu">
         <li class="header__menu__item"><a href="equipos.php">Equipos</a></li>
         <li class="header__menu__item"><a href="eventos.php">Eventos</a></li>
@@ -11,4 +16,20 @@
         <li class="header__menu__item"><a href="noticias.php">Noticias</a></li>
         <li class="header__menu__item"><a href="contacto.php">Contacto</a></li>
     </ul>
+    <ul class="header__menu--hamburger">
+        <li class="header__menu__item"><a href="equipos.php">Equipos</a></li>
+        <li class="header__menu__item"><a href="eventos.php">Eventos</a></li>
+        <li class="header__menu__item"><a href="noticias.php">Noticias</a></li>
+        <li class="header__menu__item"><a href="contacto.php">Contacto</a></li>
+    </ul>
 </header>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var hamburger = document.querySelector('.hamburger');
+        var header = document.querySelector('.header');
+        
+        hamburger.addEventListener('click', function() {
+            header.classList.toggle('active');
+        });
+    });
+</script>

@@ -246,6 +246,62 @@ body {
     margin-bottom: 10px;
 }
 
+
+@media (max-width: 1100px) {
+    .header {
+        width: 100%;
+        position: fixed;
+        top:0;
+        background: linear-gradient(to right,  var(--fuchsia),  var(--black), var(--black));
+        color:white;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__menu--hamburger {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 200px;
+    }
+
+    .header__menu__item {
+        margin:0;
+        border: 0;
+    }
+    
+
+    .header__menu__item a {
+        padding: 10px;
+        display: block;
+    }
+
+    .header.active .header__menu--hamburger {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top:15px;
+        right: 30px;
+    }
+    .header__logo {
+        position: absolute;
+        left: 10px;
+    }
+    .header__logo__img2{
+        margin-top: 40px;
+        height: 100px
+    }
+}
 /* 
     Created on : 11 jun 2024, 16:55:11
     Author     : Oliver
