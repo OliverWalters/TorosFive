@@ -61,7 +61,7 @@
                 "cal" => "Cumple ".$nombre,
                 "nombre" => "Cumpleaños de ".$jugadora->getNombre(),
                 "fecha" => $jugadora->getNacimiento()->format('Y-m-d'),
-                "descripcion" => "Hoy es el cumple de ".$nombre."!! FELICIDADES!!",
+                "descripcion" => "Es el cumple de ".$nombre."!! FELICIDADES!!",
                 "imagen" => $jugadora->getImagen()
             ));
         }
