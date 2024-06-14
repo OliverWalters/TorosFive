@@ -22,6 +22,8 @@ $entrenador = $entityManager->getRepository('Entrenador')->findAll();
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablas/tablaEntrenadores.css">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tabla.css">
+        <link rel="icon" href="<?php echo ROOT_PATH;?>/images/icono.png" type="image/*">
+        <title>Gestión Entrenadores - Toro's Five</title>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script src="<?php echo ROOT_PATH;?>/backJs/entrenadoresFilters.js"></script>
     </head>

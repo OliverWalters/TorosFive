@@ -1,6 +1,6 @@
 <?php
 if(!defined("ROOT")){
-    include '../config.php';
+    include './config.php';
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['usuario'] = $dni;
 
-        header("location:listaGestion.php");
+        header("location:backPages/listaGestion.php");
     } else {
         echo "<script>setTimeout(() => { mostrar(1); }, 50);</script>";
     }
@@ -34,10 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <link rel="icon" href="../images/icono.png" type="image/*">
+    <title>Login - Toro's Five</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="../css/backCss/login.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/backCss/login.css">
 </head>
 
 <body>

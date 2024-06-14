@@ -10,7 +10,8 @@ require_once ROOT."/bootstrap.php";
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <link rel="icon" href="../images/icono.png" type="image/*">
+    <title>Lista Gestión - Toro's Five</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/css/backCss/listaGestion.css">

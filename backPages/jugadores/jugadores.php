@@ -23,6 +23,8 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/app.css">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tabla.css">
         <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tablas/tablaJugadores.css">
+        <link rel="icon" href="<?php echo ROOT_PATH;?>/images/icono.png" type="image/*">
+        <title>Gestión Jugadores - Toro's Five</title>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script src="<?php echo ROOT_PATH;?>/backJs/jugadoresFilters.js"></script>
     </head>

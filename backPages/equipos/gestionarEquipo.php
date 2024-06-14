@@ -58,6 +58,8 @@ try {
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/tabla.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/equiposjugadores.css">
     <link rel="stylesheet" href="<?php echo ROOT_PATH;?>/css/backCss/checkbox.css">
+    <link rel="icon" href="<?php echo ROOT_PATH;?>/images/icono.png" type="image/*">
+    <title>Gestión Equipos - Toro's Five</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="<?php echo ROOT_PATH;?>/backJs/gestionarFilters.js"></script>
 </head>

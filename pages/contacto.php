@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="../images/icono.png" type="image/*">
+    <title>Contacto - Toro's Five</title>
     <script src="../js/map.js"></script>
     <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
     <script src="../node_modules/leaflet/dist/leaflet.js"></script>
