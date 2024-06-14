@@ -36,7 +36,7 @@
         </ul>
     </header>
     <script src="./js/header.js"></script>
-    <img class="img" src="./images/background/fondoIndex.png">
+    <img class="img" src="./images/background/fondoColor.png">
     <section class="info">
         <div class="info__titulo">
             <h5>Toro´s Five</h5>
@@ -55,7 +55,7 @@
             </p>
         </div>
 
-        <img class="misionVision__img imagen1" src="./images/background/fondoColor.png">
+        <img class="misionVision__img imagen1" src="./images/background/fondoIndex.png">
         <img class="misionVision__img imagen2" src="./images/background/fondoJoan.png">
         <div class="misionVision__contenedor texto2">
             <h1 class="misionVision__titulo">Visión</h1>
