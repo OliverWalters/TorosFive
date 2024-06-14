@@ -4,6 +4,7 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     margin:auto;
     gap:40px;
+    margin-bottom: 100px;
 }
 
 .box__item{
@@ -13,8 +14,8 @@
     z-index: 1;
     border-radius: 8px;
     box-shadow: 0 0 10px 0 black;
-    
-    min-height: 80vh;
+   
+    min-height: 77vh;
 }
 /* 
     Created on : 15 may 2024, 19:08:06
@@ -76,6 +77,23 @@
     box-shadow: inset 0 0 0 20rem rgba(0, 0, 0, .125), inset 0 3px 4px 0 rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .125);
 }
 
+.tbl{
+    margin-bottom: 10px;
+}
+.tbl__list{
+    max-height: 57vh  !important;
+}
+
 .noData{
     margin-top:30px;
+}
+
+
+@media (max-width:900px){
+    .box{
+        justify-content: center;
+    }
+    .box__item{
+        backdrop-filter: none;
+    }
 }

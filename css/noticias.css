@@ -53,7 +53,7 @@
     transition: all 0.3s;
 }
 .noticia__img__contenedor{
-    
+    width: 80%;
     max-height: 300px;
     max-width: 400px;
     overflow: hidden;
@@ -91,14 +91,17 @@
 @media (max-width: 1000px) {
     .noticia {
         flex-direction: column;
+        min-width: 380px;
     }
 
     .noticia__img {
         width: 80%;
         margin: auto;
-        min-width: 400px;
+        min-width: 370px;
     }
-
+    .noticia__img__contenedor{
+        width: 100%;
+    }
 }
 /* 
     Created on : 12 jun 2024, 13:08:01

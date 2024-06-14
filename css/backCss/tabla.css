@@ -123,11 +123,24 @@ h2 small {
         font-weight: normal;
         font-size: 14px;
     }
+    .tbl__btn--add{
+            float: none;
+        position: relative;
+        top: 0;
+    }
+    .tbl__header {
+        font-size: 12px !important;
+    }
 }
 
 @media (max-width: 550px) {
     .tbl__header {
+        padding: 25px 10px !important;
         display: none;
+        font-size: 10px !important;
+    }
+    .tbl{
+        font-size: 12px !important;
     }
 
     .tbl__row {}
