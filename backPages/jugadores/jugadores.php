@@ -45,7 +45,7 @@ $equipos = $entityManager->getRepository('Equipo')->findAll();
     
 
 <div class="tbl">
-    <h2 class="tbl__title">Gestión de jugadores<small class="tbl__subtitle"></small></h2>
+    <h2 class="tbl__title"><i class="fa-solid fa-user tbl__icono"></i> Gestión de jugadores<small class="tbl__subtitle"></small></h2>
     <form id="form" class="tbl__form">
       <div class="tbl__form__group">
         <input placeholder="Nombre" autocomplete="off" type="text" name="nombre" id="nombre" onkeyup="filterData()" class="tbl__form__input">
