@@ -57,7 +57,7 @@
     });
 </script>
     <script src="./js/header.js"></script>
-    <img class="img" src="./images/background/fondoColor.png">
+    <img class="img" src="./images/background/fondoInicio.png">
     <section class="info">
         <div class="info__titulo">
             <h5>Toro´s Five</h5>
