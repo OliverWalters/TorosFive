@@ -158,6 +158,13 @@ body {
         width: 100%;
         max-width: 92%;
     }
+    .img{
+        position: relative;
+        transform: translateX(-30%);
+        left: 50%;
+        width: auto;
+    /* width: 100%;*/
+    }
 }
 
 
@@ -183,7 +190,7 @@ body {
 .valores__img img {
     position: relative;
     top: -200px;
-    max-width: 100%;
+    max-width: 110%;
     max-height: 100%;
     object-fit: cover;
     filter: brightness(35%);
@@ -210,12 +217,12 @@ body {
 
 @media (max-width: 900px) {
     .valores {
-        height: 500px;
+        height: 700px;
     }
 
     .valores__img img {
         top: 0;
-        height: 650px;
+        height: 700px;
     }
 }
 

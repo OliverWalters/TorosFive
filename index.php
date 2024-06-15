@@ -57,7 +57,9 @@
     });
 </script>
     <script src="./js/header.js"></script>
-    <img class="img" src="./images/background/fondoInicio.png">
+    <div style="overflow: hidden;">
+        <img class="img" src="./images/background/fondoInicio.png">
+    </div>
     <section class="info">
         <div class="info__titulo">
             <h5>Toro´s Five</h5>
