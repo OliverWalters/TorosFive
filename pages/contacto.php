@@ -51,12 +51,12 @@
             </div>
             <div class="info">
                 <h1 class="info__title">Informacion adicional</h1>
-                <p class="info__text">C/ Atalaya Nº5</p>
+                <p class="info__text">C. Colegio, 8, 29610 Ojén, Málaga</p>
                 <p class="info__text">Tlf: +34 628 385 555</p>
                 <p class="info__social">
                     <a href="https://www.instagram.com/ojenvolley/" target="_blank" class="info__social-link"><i class="fab fa-instagram icono"></i></a>
                     <a href="https://www.tiktok.com/@ojenvolley?lang=es" target="_blank" class="info__social-link"><i class="fab fa-tiktok icono"></i></a>
-                    <a href="#" target="_blank" class="info__social-link"><i class="fab fa-youtube icono"></i></a>
+                    <a href="https://www.youtube.com/@voleibolojen" target="_blank" class="info__social-link"><i class="fab fa-youtube icono"></i></a>
                 </p>
             </div>
         </div>

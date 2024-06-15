@@ -63,7 +63,7 @@
             <h5>Toro´s Five</h5>
         </div>
         <p class="info__txt">El modelo que perseguimos como club está claramente detallado en 4 aspectos fundamentales
-            contemplados en la administración empresarial como la búsqueda de la calidad total.</p>
+            contemplados en la necesidad de fomentar valores así como la búsqueda de la calidad total.</p>
     </section>
     
     
@@ -93,7 +93,7 @@
             <img src="./images/background/ojen.png">
         </div>
         <div class="valores__content">
-            <h1 class="valores__title misionVision__titulo">Valores corporativos</h1>
+            <h1 class="valores__title misionVision__titulo">Valores</h1>
             <p class="valores__txt">En el proceso de aprendizaje, desarrollo y especialización de nuestro deporte
                 voleibol
                 y voley playa. Las jugadoras crean y fortalecen unos valores que traen consigo en la mayoría de las
@@ -127,7 +127,7 @@
     <div class="footer__item footer__item--redes">
         <a href="https://www.instagram.com/ojenvolley/" target="_blank"><i class="fa-brands fa-instagram footer__item__red"></i></a>
         <a href="https://www.tiktok.com/@ojenvolley?lang=es" target="_blank"><i class="fa-brands fa-tiktok footer__item__red"></i></a>
-        <a href="#" target="_blank"><i class="fa-brands fa-youtube footer__item__red"></i></a>
+        <a href="https://www.youtube.com/@voleibolojen" target="_blank"><i class="fa-brands fa-youtube footer__item__red"></i></a>
     </div>
 </footer>
 </body>
