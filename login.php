@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form__img"><i class="fa-solid fa-user-secret"></i></div>
             <div class="form__part">
                 <label class="form__label"><i class="fa-solid fa-user" ></i></label>
-                <input class="form__input" required type='text' name='usuario' placeholder="Usuario"> 
+                <input class="form__input" required type='text' name='usuario' placeholder="Usuario" autocomplete="off"> 
             </div>
             <div class="form__part">
                 <label class="form__label"><i class="fa-solid fa-lock"></i></label>
