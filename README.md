@@ -27,3 +27,24 @@ Welcome to the official website of the Toro´s Five Volleyball Club. This projec
   - Git for version control
   - Composer and npm for PHP package management
 
+## Usage
+
+- **Navigating the website**: Use the navigation bar to access different sections of the website.
+- **Admin Panel**: Admins can log in to update team rosters, schedules, and news articles.
+
+## Contributing
+
+If you wish to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push the branch to your forked repository.
+4. Create a pull request with a detailed description of your changes.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Contact
+
+For any inquiries, please contact us at oliver22official@gmail.com.
